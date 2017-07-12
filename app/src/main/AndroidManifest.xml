@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.baichao.yichuipai"
     android:versionCode="1">
 
@@ -117,9 +118,9 @@
         <activity
             android:name=".activity.BuyListActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-        <activity android:name=".activity.SettingActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
-        <activity android:name=".activity.SignUpActivity"
+        <activity
+            android:name=".activity.SettingActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
     </application>
+
 </manifest>
