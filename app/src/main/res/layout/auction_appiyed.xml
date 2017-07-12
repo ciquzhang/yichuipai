@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data></data>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/fragment_applied"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.jude.easyrecyclerview.EasyRecyclerView
+            android:id="@+id/appiyed_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:recyclerClipToPadding="true"
+            app:layout_empty="@layout/view_empty"
+            app:layout_progress="@layout/view_progress"
+            app:layout_error="@layout/view_error"
+            app:scrollbarStyle="insideOverlay"
+            app:scrollbars="none" >
+        </com.jude.easyrecyclerview.EasyRecyclerView>
+    </com.zhy.autolayout.AutoLinearLayout>
+</layout>

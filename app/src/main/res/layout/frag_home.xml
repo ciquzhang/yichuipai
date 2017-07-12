@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data></data>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/frag_home"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f4f4f4">
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="88px"
+            android:background="#00b589">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="i拍直播"
+                android:textStyle="bold"
+                android:layout_centerInParent="true"
+                android:textSize="36px"
+                android:textColor="#ffffff"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_main_news"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:visibility="gone"
+                android:layout_marginRight="20px"/>
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+        <com.jude.easyrecyclerview.EasyRecyclerView
+            android:id="@+id/home_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:recyclerClipToPadding="true"
+            app:layout_progress="@layout/view_progress"
+            app:layout_error="@layout/view_error"
+            app:scrollbarStyle="insideOverlay"
+            app:layout_empty="@layout/view_empty"
+            app:scrollbars="none" >
+
+            <com.fe.library.TabContainerView
+                android:id="@+id/tab_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:divideLineColor="#DBDBDB"
+                app:divideLineHeight="2"
+                app:selectedTextColor="@color/colorPrimary"
+                app:textColor="#BEBEBE">
+
+            </com.fe.library.TabContainerView>
+        </com.jude.easyrecyclerview.EasyRecyclerView>
+    </com.zhy.autolayout.AutoLinearLayout>
+</layout>

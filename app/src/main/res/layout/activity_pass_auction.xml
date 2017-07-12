@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data></data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/activity_bg">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/pass_auction_shape">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="往期拍卖"
+                android:textColor="#333333"
+                android:layout_centerInParent="true"
+                android:textSize="18dp"/>
+
+            <ImageView
+                android:id="@+id/pass_auction_return"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/icon_return_g"
+                android:layout_marginLeft="16dp"/>
+        </RelativeLayout>
+
+        <com.jude.easyrecyclerview.EasyRecyclerView
+            android:id="@+id/pass_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:recyclerClipToPadding="true"
+            android:layout_marginTop="10dp"
+            app:layout_progress="@layout/view_progress"
+            app:layout_error="@layout/view_error"
+            app:scrollbarStyle="insideOverlay"
+            app:layout_empty="@layout/view_empty"
+            app:scrollbars="none"/>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data></data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/activity_attention"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#f4f4f4">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp">
+            <ImageView
+                android:id="@+id/attention_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/icon_return_g"
+                android:layout_marginLeft="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="钱包"
+                android:textSize="18dp"
+                android:textColor="#333333"/>
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#dddddd"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/attention_top_shape">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的锤币"
+                android:textColor="#ffffff"
+                android:textSize="14dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="12dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="28585858"
+                android:layout_centerInParent="true"
+                android:textSize="36dp"
+                android:textColor="#ffffff"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="明细"
+                android:textColor="#ffffff"
+                android:textSize="16dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"/>
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="充值锤币"
+                android:textColor="#ffffff"
+                android:textSize="16dp"
+                android:background="@drawable/attention_btn_shape"/>
+        </RelativeLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="131dp"
+            android:background="@drawable/attention_min_shape"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="19">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我的锤币"
+                    android:textColor="#666666"
+                    android:textSize="14dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="12dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="26.25"
+                    android:textColor="#333333"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginRight="10dp"
+                    android:textSize="36dp"/>
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#dddddd"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="11"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="明细"
+                    android:gravity="center"
+                    android:textColor="#00b589"
+                    android:textSize="16dp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="提现"
+                    android:gravity="center"
+                    android:textColor="#00b589"
+                    android:textSize="16dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="89dp"
+            android:layout_marginTop="10dp"
+            android:background="#ffffff"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/attention_recharge"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="108dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textSize="16dp"
+                    android:text="我的押金"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#333333"
+                    android:paddingLeft="24px"/>
+
+                <ImageView
+                    android:id="@+id/attention_img_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20px"
+                    android:src="@mipmap/icon_goin_g"/>
+
+                <TextView
+                    android:id="@+id/attention_tv_recharge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/attention_img_1"
+                    android:layout_marginRight="6dp"
+                    android:textColor="#999999"
+                    android:textSize="14dp"/>
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee"
+                android:layout_marginLeft="10dp"/>
+
+            <RelativeLayout
+                android:id="@+id/attention_withdrawals"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="108dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:layout_centerVertical="true"
+                    android:text="绑定银行卡"
+                    android:textColor="#333333"
+                    android:layout_marginLeft="10dp"
+                    android:paddingLeft="24px" />
+
+                <ImageView
+                    android:id="@+id/attention_img_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20px"
+                    android:src="@mipmap/icon_goin_g"/>
+
+                <TextView
+                    android:id="@+id/attention_tv_withdrawals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/attention_img_2"
+                    android:layout_marginRight="6dp"
+                    android:textColor="#999999"
+                    android:textSize="14dp"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

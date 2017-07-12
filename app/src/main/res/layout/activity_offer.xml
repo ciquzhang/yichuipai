@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data></data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/colorBg">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/offer_title_shape">
+            <ImageView
+                android:id="@+id/offer_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/icon_return_g"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="出价确认"
+                android:layout_centerInParent="true"
+                android:textColor="#333333"
+                android:textSize="18dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#ffffff">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="正在进行"
+                android:layout_marginLeft="10dp"
+                android:textSize="16dp"
+                android:textColor="#f46a2d"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="距离结束09时45分25秒"
+                android:textColor="#333333"
+                android:textSize="14dp"
+                android:layout_marginRight="10dp"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:id="@+id/offer_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:textColor="#333333"
+                android:text="浙江温州江南皮革倒闭啦,浙江温州最大皮革厂江南皮革厂倒闭啦"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginLeft="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="当前价"
+                    android:textSize="14dp"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#999999"/>
+
+                <TextView
+                    android:id="@+id/offer_current_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥1548254"
+                    android:textColor="#F46A2D"
+                    android:textSize="24dp"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#eeeeee"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+                <TextView
+                    android:id="@+id/offer_price_add"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="加价幅度 10000"
+                    android:textColor="#666666"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="14dp"/>
+
+                <TextView
+                    android:id="@+id/offer_price_assessment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="评估价 10000"
+                    android:textColor="#666666"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="14dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="#ffffff"
+            android:layout_height="44dp"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:textSize="16dp"
+                android:text="我的竞买号"
+                android:textColor="#333333"/>
+            
+            <TextView
+                android:id="@+id/offer_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
+                android:text="Z45875"
+                android:textColor="#00b589"
+                android:textSize="14dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#ffffff"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="出价"
+                android:textColor="#333333"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:id="@+id/offer_add"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:text="+"
+                android:gravity="center"
+                android:textSize="16dp"
+                android:background="@drawable/offer_price_shape"
+                android:textColor="#00b589"/>
+
+            <TextView
+                android:id="@+id/offer_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:text="455522"
+                android:textColor="#00b589"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/offer_add"/>
+
+            <TextView
+                android:id="@+id/offer_reduce"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text="-"
+                android:gravity="center"
+                android:background="@drawable/offer_price_shape"
+                android:textSize="16dp"
+                android:layout_toLeftOf="@+id/offer_price"
+                android:textColor="#00b589"/>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/offer_commit"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="出价"
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            android:background="@drawable/bid_con_btn_shape"/>
+    </LinearLayout>
+</layout>

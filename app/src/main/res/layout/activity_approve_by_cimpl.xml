@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data></data>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/activity_cmaterial"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="#f4f4f4"
+        android:layout_height="match_parent">
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="88px">
+            <ImageView
+                android:id="@+id/material_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/icon_return_g"
+                android:layout_marginLeft="20px"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="企业认证"
+                android:textSize="36px"
+                android:textColor="#333333"/>
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#dddddd"/>
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="178px"
+            android:background="#ffffff"
+            android:layout_marginTop="20px"
+            android:orientation="vertical">
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:id="@+id/approve_impl_name"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="230px"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textSize="32px"
+                    android:text="企业名称"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="#030303"
+                    android:paddingLeft="24px"/>
+
+                <EditText
+                    android:id="@+id/material_company_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:textColor="#666666"
+                    android:hint="请输入企业名称"
+                    android:textColorHint="#c7c7cd"
+                    android:textSize="28px"/>
+
+            </com.zhy.autolayout.AutoLinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:background="#eeeeee"
+                android:layout_marginLeft="20px"/>
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:id="@+id/approve_impl_card"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="230px"
+                    android:layout_height="wrap_content"
+                    android:textSize="32px"
+                    android:layout_gravity="center_vertical"
+                    android:text="执行注册号"
+                    android:textColor="#030303"
+                    android:paddingLeft="24px" />
+
+                <EditText
+                    android:id="@+id/material_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:textColor="#666666"
+                    android:hint="填写营业执照注册号"
+                    android:textColorHint="#c7c7cd"
+                    android:textSize="28px"/>
+            </com.zhy.autolayout.AutoLinearLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="356px"
+            android:background="#ffffff"
+            android:layout_marginTop="20px"
+            android:orientation="vertical">
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="230px"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textSize="32px"
+                    android:text="联系人姓名"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="#030303"
+                    android:paddingLeft="24px"/>
+
+                <EditText
+                    android:id="@+id/material_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:textColor="#666666"
+                    android:hint="填写联系人的真实姓名"
+                    android:textColorHint="#c7c7cd"
+                    android:textSize="28px"/>
+
+            </com.zhy.autolayout.AutoLinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:background="#eeeeee"
+                android:layout_marginLeft="20px"/>
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="230px"
+                    android:layout_height="wrap_content"
+                    android:textSize="32px"
+                    android:layout_gravity="center_vertical"
+                    android:text="联系人职位"
+                    android:textColor="#030303"
+                    android:paddingLeft="24px" />
+
+                <EditText
+                    android:id="@+id/material_job"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:textColor="#666666"
+                    android:hint="填写联系人的职位"
+                    android:textColorHint="#c7c7cd"
+                    android:textSize="28px"/>
+            </com.zhy.autolayout.AutoLinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:background="#eeeeee"
+                android:layout_marginLeft="20px"/>
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="230px"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textSize="32px"
+                    android:text="联系人手机号"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="#030303"
+                    android:paddingLeft="24px"/>
+
+                <EditText
+                    android:id="@+id/material_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:textColor="#666666"
+                    android:hint="填写联系人的手机号"
+                    android:textColorHint="#c7c7cd"
+                    android:textSize="28px"/>
+
+            </com.zhy.autolayout.AutoLinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:background="#eeeeee"
+                android:layout_marginLeft="20px"/>
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="230px"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textSize="32px"
+                    android:text="电子邮箱"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="#030303"
+                    android:paddingLeft="24px"/>
+
+                <EditText
+                    android:id="@+id/material_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:textColor="#666666"
+                    android:hint="输入一个有效邮箱"
+                    android:textColorHint="#c7c7cd"
+                    android:textSize="28px"/>
+
+            </com.zhy.autolayout.AutoLinearLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/material_picture"
+            android:layout_width="match_parent"
+            android:layout_height="88px"
+            android:background="#ffffff"
+            android:layout_marginTop="20px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/frag_my_icon_1"
+                android:layout_centerVertical="true"
+                android:textSize="32px"
+                android:textColor="#333333"
+                android:text="上传证明材料"
+                android:layout_marginLeft="20px"/>
+
+            <ImageView
+                android:id="@+id/frag_my_img_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20px"
+                android:src="@mipmap/icon_goin_g"/>
+
+            <TextView
+                android:id="@+id/impl_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/frag_my_img_1"
+                android:text="未上传"
+                android:layout_marginRight="12px"
+                android:textColor="#999999"
+                android:textSize="28px"/>
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+        <Button
+            android:id="@+id/material_commit"
+            android:layout_width="match_parent"
+            android:layout_height="88px"
+            android:textSize="32px"
+            android:textColor="#ffffff"
+            android:text="提交审核"
+            android:layout_marginTop="32px"
+            android:layout_marginRight="20px"
+            android:layout_marginLeft="20px"
+            android:background="@drawable/approve_btn_shape"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="确认后不能修改,请仔细核对"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="24px"
+            android:textSize="24px"
+            android:textColor="#999999"/>
+    </com.zhy.autolayout.AutoLinearLayout>
+</layout>

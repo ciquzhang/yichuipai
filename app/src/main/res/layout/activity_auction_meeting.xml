@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data></data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#f4f4f4">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/pass_auction_shape">
+            <TextView
+                android:id="@+id/auction_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="[昆明云南印象拍卖]"
+                android:layout_centerInParent="true"
+                android:textSize="18dp"
+                android:textColor="#333333" />
+
+            <ImageView
+                android:id="@+id/meeting_return"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/icon_return_g"
+                android:layout_marginLeft="16dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#ffffff">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="拍卖时间"
+                android:textSize="16dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:textColor="#333333"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2017.2.5"
+                android:textColor="#f46a2d"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:textSize="14dp"/>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="拍卖会包含房屋"
+            android:textSize="14dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:textColor="#666666"/>
+
+
+        <com.jude.easyrecyclerview.EasyRecyclerView
+            android:id="@+id/meeting_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:recyclerClipToPadding="true"
+            app:layout_progress="@layout/view_progress"
+            app:layout_error="@layout/view_error"
+            app:scrollbarStyle="insideOverlay"
+            app:layout_empty="@layout/view_empty"
+            android:layout_marginTop="5dp"
+            app:scrollbars="none" >
+        </com.jude.easyrecyclerview.EasyRecyclerView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="94dp">
+            <Button
+                android:id="@+id/meeting_next"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="下一步"
+                android:textColor="#ffffff"
+                android:textSize="16dp"
+                android:background="@drawable/meeting_shape"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

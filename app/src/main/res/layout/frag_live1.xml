@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+    <data></data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/live_house"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:orientation="vertical"
+                    android:background="#ffffff">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp">
+                        <TextView
+                            android:id="@+id/live_title"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.8"
+                            android:layout_height="match_parent"
+                            android:maxLines="2"
+                            android:textColor="#333333"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:textSize="16dp"
+                            android:text="安宁市静安区兴隆振方有限公司位于什么什么合法"/>
+
+                        <ImageView
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="10dp"
+                            android:background="#eeeeee"
+                            android:layout_marginTop="10dp"
+                            android:layout_gravity="center"/>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="0.2"
+                            android:layout_height="match_parent">
+                            <LinearLayout
+                                android:id="@+id/live_collection_commit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:gravity="center"
+                                android:layout_centerInParent="true">
+                                <ImageView
+                                    android:id="@+id/live_collection_img"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@mipmap/icon_remind"/>
+                                <TextView
+                                    android:id="@+id/live_is_collection"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#666666"
+                                    android:textSize="12dp"
+                                    android:text="收藏提醒" />
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="13dp">
+                        <TextView
+                            android:id="@+id/live_current"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="当前价"
+                            android:paddingLeft="10dp"
+                            android:textSize="14dp"
+                            android:textColor="#999999"/>
+
+                        <TextView
+                            android:id="@+id/live_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="24dp"
+                            android:text="￥121251"
+                            android:textColor="#f46a2d"
+                            android:layout_marginLeft="8dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
+                        <TextView
+                            android:id="@+id/live_sign_up_count"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:textSize="12dp"
+                            android:textColor="#999999"
+                            android:gravity="center"
+                            android:text="1025人报名"/>
+
+                        <TextView
+                            android:id="@+id/live_clock"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:textSize="12dp"
+                            android:gravity="center"
+                            android:textColor="#999999"
+                            android:text="1025人设置提醒"/>
+
+                        <TextView
+                            android:id="@+id/live_look_count"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:textSize="12dp"
+                            android:gravity="center"
+                            android:textColor="#999999"
+                            android:text="1025次围观"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#eeeeee"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginLeft="10dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:layout_weight="1">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#666666"
+                                android:textSize="14dp"
+                                android:text="加价幅度 "/>
+                            <TextView
+                                android:id="@+id/live_increasePrice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="10000"
+                                android:textColor="#666666"
+                                android:textSize="14dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:layout_weight="1">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#666666"
+                                android:textSize="14dp"
+                                android:text="评估价 "/>
+                            <TextView
+                                android:id="@+id/live_evalaute"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1030020"
+                                android:textColor="#666666"
+                                android:textSize="14dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/live_buy"
+                    android:layout_width="match_parent"
+                    android:layout_height="88dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#ffffff"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="竞买记录("
+                                android:textSize="16dp"
+                                android:layout_marginLeft="10dp"
+                                android:textColor="#333333"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="14"
+                                android:textSize="16dp"
+                                android:textColor="#333333"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=")"
+                                android:textSize="16dp"
+                                android:textColor="#333333"/>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/live_img_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/icon_goin_g"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"/>
+
+                        <TextView
+                            android:id="@+id/live_buy_list"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="全部"
+                            android:textSize="14dp"
+                            android:textColor="#999999"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="2dp"
+                            android:layout_toLeftOf="@+id/live_img_1"/>
+                    </RelativeLayout>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/live_buy_list_recycle"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp">
+
+                    </android.support.v7.widget.RecyclerView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="155dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#ffffff"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="10dp">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="起拍价: ￥"
+                                    android:textSize="14dp"
+                                    android:textColor="#2a2a2a"/>
+
+                                <TextView
+                                    android:id="@+id/live_start_price"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="900000"
+                                    android:textSize="14dp"
+                                    android:textColor="#2a2a2a"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="类型:  "
+                                    android:textSize="14dp"
+                                    android:textColor="#2a2a2a"/>
+
+                                <TextView
+                                    android:id="@+id/live_shop_type"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="变卖"
+                                    android:textSize="14dp"
+                                    android:textColor="#2a2a2a"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="变卖周期:  "
+                                    android:textSize="14dp"
+                                    android:textColor="#2a2a2a"/>
+
+                                <TextView
+                                    android:id="@+id/live_sell_period"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="1天"
+                                    android:textSize="14dp"
+                                    android:textColor="#2a2a2a"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="报名截止:  "
+                                    android:textSize="14dp"
+                                    android:textColor="#2a2a2a"/>
+
+                                <TextView
+                                    android:id="@+id/live_sign_up_end"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="2017.6.15"
+                                    android:textSize="14dp"
+                                    android:textColor="#2a2a2a"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="看房时间:  "
+                                    android:textSize="14dp"
+                                    android:textColor="#2a2a2a"/>
+
+                                <TextView
+                                    android:id="@+id/live_see_house"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="2017.6.15"
+                                    android:textSize="14dp"
+                                    android:textColor="#2a2a2a"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="拍卖时间:  "
+                                    android:textSize="14dp"
+                                    android:textColor="#2a2a2a"/>
+
+                                <TextView
+                                    android:id="@+id/live_auction_start_time"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="2017.6.15"
+                                    android:textSize="14dp"
+                                    android:textColor="#2a2a2a"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="竞价规则:  "
+                                android:textSize="12dp"
+                                android:textColor="#999999" />
+
+                            <TextView
+                                android:id="@+id/live_rule"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="至少一人报名且出价不低于起拍价,方可成交"
+                                android:textSize="12dp"
+                                android:textColor="#999999"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="咨询方式:  "
+                                android:textSize="12dp"
+                                android:textColor="#999999" />
+
+                            <TextView
+                                android:id="@+id/live_consult_way"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="钱女士 17584582584"
+                                android:textSize="12dp"
+                                android:textColor="#999999"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="房产地址:  "
+                                android:textSize="12dp"
+                                android:textColor="#999999" />
+
+                            <TextView
+                                android:id="@+id/live_house_address"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="云南省穿金路铂金华庭7层云南天之翼"
+                                android:textSize="12dp"
+                                android:textColor="#999999"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="10dp">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/live_bg"/>
+
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="40dp"
+                        android:text="点击查看360图片"
+                        android:textSize="16dp"
+                        android:textColor="#00b589"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/live_btn_shape"/>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp"
+                    android:background="#ffffff">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="咨询"
+                        android:textColor="#333333"
+                        android:textSize="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+                            <RelativeLayout
+                                android:layout_width="170dp"
+                                android:layout_height="40dp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/live_btn_shape_bottom">
+                                <TextView
+                                    android:id="@+id/live_person_service"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:text="人工服务"
+                                    android:textSize="14dp"
+                                    android:textColor="#666666"/>
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toLeftOf="@+id/live_person_service"
+                                    android:layout_marginRight="9dp"
+                                    android:src="@mipmap/icon_artificial"/>
+                            </RelativeLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+                            <RelativeLayout
+                                android:layout_width="170dp"
+                                android:layout_height="40dp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/live_btn_shape_bottom">
+                                <TextView
+                                    android:id="@+id/live_phone"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:text="0571-68584584"
+                                    android:textSize="14dp"
+                                    android:textColor="#666666"/>
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toLeftOf="@+id/live_phone"
+                                    android:layout_marginRight="9dp"
+                                    android:src="@mipmap/icon_phone"/>
+                            </RelativeLayout>
+                        </RelativeLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="122dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#ffffff"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="竞买公告"
+                            android:textSize="16dp"
+                            android:textColor="#333333"
+                            android:layout_centerVertical="true" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_centerVertical="true"
+                            android:src="@mipmap/icon_goin_g"/>
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#eeeeee"
+                        android:layout_marginLeft="10dp"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="竞买需知"
+                            android:textSize="16dp"
+                            android:textColor="#333333"
+                            android:layout_centerVertical="true" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_centerVertical="true"
+                            android:src="@mipmap/icon_goin_g"/>
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#eeeeee"
+                        android:layout_marginLeft="10dp"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="帮助"
+                            android:textSize="16dp"
+                            android:textColor="#333333"
+                            android:layout_centerVertical="true" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_centerVertical="true"
+                            android:src="@mipmap/icon_goin_g"/>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/live_btn_commit"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="vertical"
+                    android:layout_marginTop="18dp"
+                    android:background="#ffffff">
+                    <Button
+                        android:id="@+id/live_commit"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="出价"
+                        android:textColor="#00b589"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="7dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/live_btn_shape_commit"
+                        android:textSize="18dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

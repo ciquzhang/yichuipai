@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#ffffff"
+    android:layout_height="44dp">
+    <TextView
+        android:id="@+id/deposit_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="￥20000"
+        android:layout_centerVertical="true"
+        android:textSize="16dp"
+        android:textColor="#333333"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:id="@+id/deposit_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14dp"
+        android:textColor="#3f3f3f"
+        android:text="(2017年6月5号充值)"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/deposit_price"/>
+
+    <ImageView
+        android:id="@+id/deposit_goin"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:src="@mipmap/icon_goin_g"/>
+
+    <TextView
+        android:id="@+id/deposit_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="冻结"
+        android:textSize="14dp"
+        android:textColor="#999999"
+        android:layout_marginRight="6dp"
+        android:layout_alignTop="@+id/deposit_price"
+        android:layout_toStartOf="@+id/deposit_goin" />
+</RelativeLayout>

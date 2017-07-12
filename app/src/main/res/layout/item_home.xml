@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:background="#ffffff"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="180dp"
+        android:layout_height="140dp">
+        <ImageView
+            android:id="@+id/home_img"
+            android:layout_width="160dp"
+            android:layout_height="120dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/zhibo_house"
+            android:background="@drawable/home_bg_shape"/>
+
+        <TextView
+            android:id="@+id/home_type"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:background="@drawable/home_tv_shape"
+            android:textSize="12dp"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#ffffff"/>
+    </RelativeLayout>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20px"
+        android:layout_marginRight="20px"
+        android:background="#ffffff"
+        android:orientation="vertical">
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.3">
+            <TextView
+                android:id="@+id/home_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="俊发盛唐城3栋1008号房屋"
+                android:textColor="#333333"
+                android:paddingTop="8px"
+                android:textSize="28px"/>
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/home_price_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20px"
+                android:textColor="#999999"
+                android:gravity="center_vertical"
+                android:text="当前价"/>
+            <TextView
+                android:id="@+id/home_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="958万"
+                android:textColor="#f46a2d"
+                android:textSize="48px"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10px"/>
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#eeeeee"/>
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.8"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/item_home_count"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="围观"
+                android:textSize="28px"
+                android:gravity="center_vertical"
+                android:textColor="#999999"/>
+
+            <TextView
+                android:id="@+id/home_person_count"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="2525"
+                android:gravity="center_vertical"
+                android:textSize="28px"
+                android:layout_marginLeft="10px"
+                android:textColor="#2a2a2a"/>
+        </com.zhy.autolayout.AutoLinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
+</com.zhy.autolayout.AutoLinearLayout>

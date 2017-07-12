@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data></data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/colorBg">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/bid_confir_shape">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="竞买身份信息确认"
+                android:textSize="18dp"
+                android:layout_centerInParent="true"
+                android:textColor="#333333"/>
+
+            <ImageView
+                android:id="@+id/sign_up_return"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/icon_return_g"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"/>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="竞买人条件确认"
+            android:textColor="#666666"
+            android:textSize="14dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="111dp"
+            android:orientation="vertical"
+            android:layout_marginTop="5dp"
+            android:background="#ffffff">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:maxEms="17"
+                    android:textSize="12dp"
+                    android:textColor="#333333"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="竞买人知晓拍下不买的后果:保证金可能被法院判划和并承担相应的司法处罚"/>
+                <CheckBox
+                    android:id="@+id/sign_up_check_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:checked="false"
+                    android:layout_marginRight="12dp"/>
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:background="#eeeeee"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:maxEms="17"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="12dp"
+                    android:textColor="#333333"
+                    android:text="竞买人已阅读同意《竞拍服务协议》和《变卖应买协议》,如未实地看样,视为接受标的所有瑕疵等细则"/>
+                <CheckBox
+                    android:id="@+id/sign_up_check_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:checked="false"
+                    android:layout_marginRight="12dp"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="竞买人身份信息确认"
+            android:textColor="#666666"
+            android:textSize="14dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="179dp"
+            android:background="#ffffff"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:text="姓名"
+                    android:textSize="16dp"
+                    android:textColor="#030303"
+                    android:paddingLeft="12dp"
+                    android:layout_gravity="center_vertical"/>
+
+                <EditText
+                    android:id="@+id/sign_up_name"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:layout_weight="0.7"
+                    android:hint="请输入姓名"
+                    android:paddingLeft="10dp"
+                    android:textColor="#c7c7cd"
+                    android:textSize="14dp"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:background="#eeeeee"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:text="身份证号"
+                    android:textSize="16dp"
+                    android:textColor="#030303"
+                    android:paddingLeft="12dp"
+                    android:layout_gravity="center_vertical"/>
+
+                <EditText
+                    android:id="@+id/sign_up_card"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:layout_weight="0.7"
+                    android:hint="仅限写中国大陆居民身份证"
+                    android:paddingLeft="10dp"
+                    android:textColor="#c7c7cd"
+                    android:textSize="14dp"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:background="#eeeeee"/>
+
+            <RelativeLayout
+                android:id="@+id/sign_up_choose"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="所在地区"
+                    android:paddingLeft="12dp"
+                    android:textSize="16dp"
+                    android:textColor="#030303"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:id="@+id/sign_up_choose_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="请选择所在地区"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="6dp"
+                    android:textSize="14dp"
+                    android:textColor="#999999"
+                    android:layout_toLeftOf="@+id/sign_up_go"/>
+
+                <ImageView
+                    android:id="@+id/sign_up_go"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_goin_g"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"/>
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:background="#eeeeee"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:text="所在街道"
+                    android:textSize="16dp"
+                    android:textColor="#030303"
+                    android:paddingLeft="12dp"
+                    android:layout_gravity="center_vertical"/>
+
+                <EditText
+                    android:id="@+id/sign_up_stress"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:layout_weight="0.7"
+                    android:paddingLeft="10dp"
+                    android:hint="与身份证信息保持一致"
+                    android:textColor="#c7c7cd"
+                    android:textSize="14dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="选择押金"
+            android:textColor="#666666"
+            android:textSize="14dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="4dp"
+            android:background="#ffffff">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="此场拍卖会所需押金"
+                android:layout_centerVertical="true"
+                android:textSize="16dp"
+                android:textColor="#333333"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/sign_up_need_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="￥20000"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:textSize="16dp"
+                android:textColor="#666666"
+                android:layout_marginRight="10dp"/>
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#eeeeee"
+            android:layout_marginLeft="10dp"/>
+
+        <RelativeLayout
+            android:id="@+id/sign_up_deposit_choose"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="#ffffff">
+            <TextView
+                android:id="@+id/sign_up_deposit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="请选择押金"
+                android:paddingLeft="12dp"
+                android:textSize="16dp"
+                android:textColor="#333333"
+                android:layout_centerVertical="true"/>
+
+            <ImageView
+                android:id="@+id/sign_up_deposit_go"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_goin_g"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="更换"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="6dp"
+                android:textSize="14dp"
+                android:textColor="#999999"
+                android:layout_toLeftOf="@+id/sign_up_deposit_go"/>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="或先前往押金页面充值"
+            android:layout_gravity="right"
+            android:layout_marginTop="7dp"
+            android:textSize="14dp"
+            android:layout_marginRight="10dp"/>
+
+        <Button
+            android:id="@+id/sign_up_commit"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="确认"
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            android:background="@drawable/bid_con_btn_shape"/>
+
+    </LinearLayout>
+</layout>

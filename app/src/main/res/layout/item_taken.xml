@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp">
+
+        <TextView
+            android:id="@+id/taken_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:text="[竞买号 Z7451]"
+            android:layout_centerVertical="true"
+            android:textColor="#999999"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/taken_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="未支付"
+            android:textSize="14dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:textColor="#F46A2D"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp">
+        <ImageView
+            android:id="@+id/taken_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/zhibo_house"
+            android:layout_marginLeft="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="15dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/taken_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:textColor="#151515"
+                    android:layout_marginRight="10dp"
+                    android:text="[昆明别墅专场]碧桂园欣都龙城凤凰成仙3栋1单元1005"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true">
+                    <TextView
+                        android:id="@+id/taken_price_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="成交价"
+                        android:textSize="14dp"
+                        android:textColor="#666666"
+                        android:layout_marginRight="10dp"/>
+
+                    <TextView
+                        android:id="@+id/taken_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="￥11124545"
+                        android:textColor="#333333"
+                        android:layout_marginRight="10dp"
+                        android:textSize="24dp"/>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/taken_sign_up_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9855人报名"
+                android:layout_centerInParent="true"
+                android:textColor="#999999"
+                android:textSize="12dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/taken_price_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9855人出价"
+                android:layout_centerInParent="true"
+                android:textColor="#999999"
+                android:textSize="12dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/taken_look_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9855人围观"
+                android:layout_centerInParent="true"
+                android:textColor="#999999"
+                android:textSize="12dp"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <Button
+            android:id="@+id/taken_look"
+            android:layout_width="150dp"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:text="联系客服"
+            android:layout_marginRight="10dp"
+            android:textColor="#ffffff"
+            android:background="@drawable/taken_btn_shape"/>
+    </RelativeLayout>
+
+</LinearLayout>

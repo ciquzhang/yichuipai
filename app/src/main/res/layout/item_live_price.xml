@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="10dp"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/item_live"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/live_price_shape">
+        <TextView
+            android:id="@+id/item_live_bin"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="Z4751"
+            android:gravity="right"
+            android:textColor="#666666"
+            android:layout_marginRight="4dp"
+            android:textSize="13dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/item_live_price"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="￥1022154"
+            android:layout_marginRight="4dp"
+            android:gravity="right"
+            android:textColor="#999999"
+            android:textSize="13dp"/>
+
+    </LinearLayout>
+</LinearLayout>

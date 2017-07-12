@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data></data>
+    <com.zhy.autolayout.AutoLinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/activity_pmaterial"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f4f4f4"
+        android:orientation="vertical">
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="88px">
+            <ImageView
+                android:id="@+id/material_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/icon_return_g"
+                android:layout_marginLeft="20px"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="实名认证"
+                android:textSize="36px"
+                android:textColor="#333333"/>
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#dddddd"/>
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="484px"
+            android:orientation="vertical"
+            android:background="#ffffff"
+            android:layout_marginTop="20px">
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:id="@+id/material_front_card"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="身份证(正面)"
+                    android:textColor="#333333"
+                    android:layout_marginLeft="20px"
+                    android:layout_centerVertical="true"
+                    android:textSize="32px"/>
+
+                <ImageView
+                    android:id="@+id/frag_my_img_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20px"
+                    android:src="@mipmap/icon_goin_g"/>
+
+                <ImageView
+                    android:id="@+id/material_front_card_img"
+                    android:layout_width="120px"
+                    android:layout_height="120px"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/frag_my_img_4"
+                    android:layout_marginRight="14px"/>
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:background="#eeeeee"
+                android:layout_marginLeft="20px"/>
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:id="@+id/material_contrary_card"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="身份证(反面)"
+                    android:textColor="#333333"
+                    android:layout_marginLeft="20px"
+                    android:layout_centerVertical="true"
+                    android:textSize="32px"/>
+
+                <ImageView
+                    android:id="@+id/frag_my_img_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20px"
+                    android:src="@mipmap/icon_goin_g"/>
+
+                <ImageView
+                    android:id="@+id/material_contrary_card_img"
+                    android:layout_width="120px"
+                    android:layout_height="120px"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/frag_my_img_1"
+                    android:layout_marginRight="14px"/>
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:background="#eeeeee"
+                android:layout_marginLeft="20px"/>
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:id="@+id/material_other_card"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="手持身份证(正面)照"
+                    android:textColor="#333333"
+                    android:layout_marginLeft="20px"
+                    android:layout_centerVertical="true"
+                    android:textSize="32px"/>
+
+                <ImageView
+                    android:id="@+id/frag_my_img_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20px"
+                    android:src="@mipmap/icon_goin_g"/>
+
+                <ImageView
+                    android:id="@+id/material_other_card_img"
+                    android:layout_width="120px"
+                    android:layout_height="120px"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/frag_my_img_2"
+                    android:layout_marginRight="14px"/>
+            </com.zhy.autolayout.AutoRelativeLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <Button
+            android:id="@+id/material_commit"
+            android:layout_width="match_parent"
+            android:layout_height="88px"
+            android:textSize="32px"
+            android:textColor="#ffffff"
+            android:text="确认"
+            android:layout_marginTop="32px"
+            android:layout_marginRight="20px"
+            android:layout_marginLeft="20px"
+            android:background="@drawable/approve_btn_shape"/>
+    </com.zhy.autolayout.AutoLinearLayout>
+</layout>
