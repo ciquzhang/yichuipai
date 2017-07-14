@@ -272,7 +272,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="起拍价: ￥"
                                     android:textSize="14dp"
-                                    android:textColor="#2a2a2a"/>
+                                    android:textColor="#999999"/>
 
                                 <TextView
                                     android:id="@+id/live_start_price"
@@ -292,7 +292,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="类型:  "
                                     android:textSize="14dp"
-                                    android:textColor="#2a2a2a"/>
+                                    android:textColor="#999999"/>
 
                                 <TextView
                                     android:id="@+id/live_shop_type"
@@ -312,7 +312,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="变卖周期:  "
                                     android:textSize="14dp"
-                                    android:textColor="#2a2a2a"/>
+                                    android:textColor="#999999"/>
 
                                 <TextView
                                     android:id="@+id/live_sell_period"
@@ -338,7 +338,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="报名截止:  "
                                     android:textSize="14dp"
-                                    android:textColor="#2a2a2a"/>
+                                    android:textColor="#999999"/>
 
                                 <TextView
                                     android:id="@+id/live_sign_up_end"
@@ -358,7 +358,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="看房时间:  "
                                     android:textSize="14dp"
-                                    android:textColor="#2a2a2a"/>
+                                    android:textColor="#999999"/>
 
                                 <TextView
                                     android:id="@+id/live_see_house"
@@ -378,7 +378,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="拍卖时间:  "
                                     android:textSize="14dp"
-                                    android:textColor="#2a2a2a"/>
+                                    android:textColor="#999999"/>
 
                                 <TextView
                                     android:id="@+id/live_auction_start_time"
@@ -413,7 +413,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="至少一人报名且出价不低于起拍价,方可成交"
                                 android:textSize="12dp"
-                                android:textColor="#999999"/>
+                                android:textColor="#2a2a2a"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -433,7 +433,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="钱女士 17584582584"
                                 android:textSize="12dp"
-                                android:textColor="#999999"/>
+                                android:textColor="#2a2a2a"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -453,7 +453,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="云南省穿金路铂金华庭7层云南天之翼"
                                 android:textSize="12dp"
-                                android:textColor="#999999"/>
+                                android:textColor="#2a2a2a"/>
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +22,6 @@ import com.baichao.yichuipai.fragment.presenter.AuAppliedPresenter;
 import com.baichao.yichuipai.fragment.presenter.AuAppliedPresenterImpl;
 import com.baichao.yichuipai.fragment.view.AuAppliedView;
 import com.baichao.yichuipai.utils.ACache;
-import com.baichao.yichuipai.utils.Constant;
 import com.baichao.yichuipai.utils.Utils;
 import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
@@ -89,46 +89,23 @@ public class AuAppliedFragment extends BaseFragment implements AuAppliedView,
         adapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
+                //                判断该进入直播还是非直播
                 if(mList.get(position).getAuctionInfo().getLiveStatus() == 1){
-                    //直播中
+                    //直播
                     Intent intent =  new Intent(mActivity,LiveActivity.class);
-                    intent.putExtra("houseId",mList.get(position).getHouseInfo().getId());
-                    intent.putExtra("auctionId",mList.get(position).getAuctionInfo().getId());
-                    //设置 1: 拍卖中  2:看房中：3 :看房（不能报名）
-                    if(mList.get(position).getHouseInfo().getSeeHouseStatus() == 1 && mList.get(position).getAuctionInfo().getSignStatus() == 0 &&
-                            mList.get(position).getAuctionInfo().getAuctionStatus()!=2){
-                        //看房中不能报名
-                        intent.putExtra("live_type",3);
-                    }else if(mList.get(position).getHouseInfo().getSeeHouseStatus() == 1 && mList.get(position).getAuctionInfo().getSignStatus() == 1 &&
-                            mList.get(position).getAuctionInfo().getAuctionStatus()==0){
-                        //看房中可以报名
-                        intent.putExtra("live_type",2);
-                    }else{
-                        //拍卖中
-                        intent.putExtra("live_type",1);
-                    }
-//                    Log.e("TAG", "getHouseId:" + mList.get(position).getAuctionInfo().getHouseId() +
-//                            "getAuctionId" + mList.get(position).getAuctionInfo().getAuctionId());
-                    startActivityForResult(intent, Constant.REQUEST_LIVE_TO_MY);
+                    intent.putExtra("houseId",mList.get(position).getHouseInfo().getId() + "");
+                    intent.putExtra("auctionId",mList.get(position).getAuctionInfo().getId() + "");
+                    Log.e("TAG", "--直播houseId--" + mList.get(position).getHouseInfo().getId() + "---auctionId" +
+                            mList.get(position).getAuctionInfo().getId() + "userId" + ACache.get(mActivity).getAsString("userId"));
+                    startActivity(intent);
                 }else{
-                    //未直播
+                    //非直播
                     Intent intent =  new Intent(mActivity,NoLiveActivity.class);
-                    intent.putExtra("houseId",mList.get(position).getHouseInfo().getId());
-                    intent.putExtra("auctionId",mList.get(position).getAuctionInfo().getId());
-                    if(mList.get(position).getAuctionInfo().getAuctionStatus() == 2 && mList.get(position).getAuctionInfo().getSignStatus() == 0){
-                        //拍卖中
-                        intent.putExtra("live_type",1);
-                    }
-                    if(mList.get(position).getAuctionInfo().getAuctionStatus() != 2 && mList.get(position).getAuctionInfo().getSignStatus() == 1){
-                        //报名中 -->未开始直播,可以报名
-                        intent.putExtra("live_type",4);
-                    }else if(mList.get(position).getAuctionInfo().getAuctionStatus() != 2 && mList.get(position).getAuctionInfo().getSignStatus() == 0){
-                        //停止报名 --> 未开始直播，不能报名
-                        intent.putExtra("live_type",5);
-                    }
-//                    Log.e("TAG", "getHouseId:" + mList.get(position).getHouseId() +
-//                            "getAuctionId" + mList.get(position).getAuctionId());
-                    startActivityForResult(intent, Constant.REQUEST_LIVE_TO_MY);
+                    intent.putExtra("houseId",mList.get(position).getHouseInfo().getId() + "");
+                    intent.putExtra("auctionId",mList.get(position).getAuctionInfo().getId() + "");
+                    Log.e("TAG", "--直播houseId--" + mList.get(position).getHouseInfo().getId() + "---auctionId" +
+                            mList.get(position).getAuctionInfo().getId() + "userId" + ACache.get(mActivity).getAsString("userId"));
+                    startActivity(intent);
                 }
             }
         });
@@ -183,6 +160,8 @@ public class AuAppliedFragment extends BaseFragment implements AuAppliedView,
         for(int i = 0;i<data.size();i++){
             for(int j = 0;j<data.get(i).getHouseAndSignRecord().size();j++){
                 data.get(i).getHouseAndSignRecord().get(j).setName(data.get(i).getAuctionMeeting().getName());
+                data.get(i).getHouseAndSignRecord().get(j).setSignCount(data.get(i).getAuctionMeeting().getSignCount());
+                data.get(i).getHouseAndSignRecord().get(j).setSignStatus(data.get(i).getAuctionMeeting().getSignStatus());
             }
             adapter.addAll(data.get(i).getHouseAndSignRecord());
             mList.addAll(data.get(i).getHouseAndSignRecord());
@@ -196,6 +175,9 @@ public class AuAppliedFragment extends BaseFragment implements AuAppliedView,
             for(int i = 0;i<data.size();i++){
                 for(int j = 0;j<data.get(i).getHouseAndSignRecord().size();j++){
                     data.get(i).getHouseAndSignRecord().get(j).setName(data.get(i).getAuctionMeeting().getName());
+                    data.get(i).getHouseAndSignRecord().get(j).setSignCount(data.get(i).getAuctionMeeting().getSignCount());
+                    data.get(i).getHouseAndSignRecord().get(j).setSignStatus(data.get(i).getAuctionMeeting().getSignStatus());
+                    data.get(i).getHouseAndSignRecord().get(j).setSignStatus(data.get(i).getAuctionMeeting().getSignStatus());
                 }
                 adapter.addAll(data.get(i).getHouseAndSignRecord());
                 mList.addAll(data.get(i).getHouseAndSignRecord());

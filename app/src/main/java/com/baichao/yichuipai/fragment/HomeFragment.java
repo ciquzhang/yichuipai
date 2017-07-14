@@ -18,12 +18,14 @@ import com.baichao.yichuipai.R;
 import com.baichao.yichuipai.activity.LiveActivity;
 import com.baichao.yichuipai.activity.NoLiveActivity;
 import com.baichao.yichuipai.activity.PassAuctionActivity;
+import com.baichao.yichuipai.activity.module.HouseInfoDetailBean;
 import com.baichao.yichuipai.adapter.HomeHolder;
 import com.baichao.yichuipai.core.BaseFragment;
 import com.baichao.yichuipai.databinding.FragHomeBinding;
 import com.baichao.yichuipai.fragment.moudule.HomeBean;
 import com.baichao.yichuipai.fragment.presenter.HomePresenterImpl;
 import com.baichao.yichuipai.fragment.view.HomeView;
+import com.baichao.yichuipai.utils.ACache;
 import com.baichao.yichuipai.utils.Constant;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
@@ -112,46 +114,24 @@ public class HomeFragment extends BaseFragment implements HomeView,
         adapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
+//                判断该进入直播还是非直播
                 if(mData.get(position).getLiveStatus() == 1){
-                    //直播中
+                    //直播
                     Intent intent =  new Intent(mActivity,LiveActivity.class);
-                    intent.putExtra("houseId",mData.get(position).getHouseId());
-                    intent.putExtra("auctionId",mData.get(position).getAuctionId());
-                    //设置 1: 拍卖中  2:看房中：3 :看房（不能报名）
-                    if(mData.get(position).getSeeHouseStatus() == 1 && mData.get(position).getSignStatus() == 0 &&
-                            mData.get(position).getAuctionStatus()!=2){
-                        //看房中不能报名
-                        intent.putExtra("live_type",3);
-                    }else if(mData.get(position).getSeeHouseStatus() == 1 && mData.get(position).getSignStatus() == 1 &&
-                            mData.get(position).getAuctionStatus()==0){
-                        //看房中可以报名
-                        intent.putExtra("live_type",2);
-                    }else{
-                        //拍卖中
-                        intent.putExtra("live_type",1);
-                    }
-                    Log.e("TAG", "getHouseId:" + mData.get(position).getHouseId() +
-                            "getAuctionId" + mData.get(position).getAuctionId());
-                    startActivityForResult(intent, Constant.REQUEST_LIVE_TO_MY);
+                    intent.putExtra("houseId",mData.get(position).getHouseId() + "");
+                    intent.putExtra("auctionId",mData.get(position).getAuctionId() + "");
+                    Log.e("TAG", "--直播houseId--" + mData.get(position).getHouseId() + "---auctionId" +
+                            mData.get(position).getAuctionId() + "userId" + ACache.get(mActivity).getAsString("userId"));
+                    startActivity(intent);
                 }else{
-                    //未直播
+                    //非直播
                     Intent intent =  new Intent(mActivity,NoLiveActivity.class);
-                    intent.putExtra("houseId",mData.get(position).getHouseId());
-                    intent.putExtra("auctionId",mData.get(position).getAuctionId());
-                    if(mData.get(position).getAuctionStatus() == 2 && mData.get(position).getSignStatus() == 0){
-                        //拍卖中
-                        intent.putExtra("live_type",1);
-                    }
-                    if(mData.get(position).getAuctionStatus() != 2 && mData.get(position).getSignStatus() == 1){
-                        //报名中 -->未开始直播,可以报名
-                        intent.putExtra("live_type",4);
-                    }else if(mData.get(position).getAuctionStatus() != 2 && mData.get(position).getSignStatus() == 0){
-                        //停止报名 --> 未开始直播，不能报名
-                        intent.putExtra("live_type",5);
-                    }
-                    Log.e("TAG", "getHouseId:" + mData.get(position).getHouseId() +
-                            "getAuctionId" + mData.get(position).getAuctionId());
-                    startActivityForResult(intent, Constant.REQUEST_LIVE_TO_MY);
+                    intent.putExtra("houseId",mData.get(position).getHouseId() + "");
+                    intent.putExtra("auctionId",mData.get(position).getAuctionId() + "");
+                    Log.e("TAG", "--非直播houseId--" + mData.get(position).getHouseId() + "---auctionId" +
+                            mData.get(position).getAuctionId() + "userId" +
+                            ACache.get(mActivity).getAsString("userId"));
+                    startActivity(intent);
                 }
             }
         });
@@ -185,6 +165,51 @@ public class HomeFragment extends BaseFragment implements HomeView,
         adapter.addAll(list);
     }
 
+    @Override
+    public void netForItemsSuccess(HouseInfoDetailBean.DataBean dataBean, String houseId, String auctionId) {
+        if(dataBean.getAuctionInfo().getLiveStatus() == 1){
+            //直播中
+            Intent intent =  new Intent(mActivity,LiveActivity.class);
+            intent.putExtra("houseId",houseId);
+            intent.putExtra("auctionId",auctionId);
+            intent.putExtra("dataBean",dataBean);
+            if(dataBean.getAuctionMeeting().getSignStatus() == 1 && dataBean.getAuctionInfo().getAuctionStatus() == 0 &&
+                    dataBean.getHouseInfo().getSeeHouseStatus() == 1){
+               //看房并且可以报名
+                intent.putExtra("live_type",2);
+            }else if(dataBean.getAuctionMeeting().getSignStatus() == 0 && dataBean.getAuctionInfo().getAuctionStatus() == 0 &&
+                    dataBean.getHouseInfo().getSeeHouseStatus() == 1){
+                //看房不可报名
+                intent.putExtra("live_type",3);
+            }else if(dataBean.getAuctionMeeting().getSignStatus() == 2 && dataBean.getAuctionInfo().getAuctionStatus() == 1){
+                //拍卖中
+                intent.putExtra("live_type",1);
+            }
+            Log.e("TAG", "--houseId--" + houseId + "---auctionId" + auctionId + "userId" + ACache.get(mActivity).getAsString("userId"));
+            startActivityForResult(intent, Constant.REQUEST_LIVE_TO_MY);
+        }else{
+            //未直播
+            Intent intent =  new Intent(mActivity,NoLiveActivity.class);
+            intent.putExtra("houseId",houseId);
+            intent.putExtra("auctionId",auctionId);
+            intent.putExtra("dataBean",dataBean);
+            if(dataBean.getAuctionMeeting().getSignStatus() == 2 && dataBean.getAuctionInfo().getAuctionStatus() == 1){
+                //拍卖
+                intent.putExtra("live_type",1);
+            }else if(dataBean.getAuctionMeeting().getSignStatus() == 1 && dataBean.getAuctionInfo().getAuctionStatus() == 0){
+                //可报名
+                intent.putExtra("live_type",4);
+            }else if(dataBean.getAuctionMeeting().getSignStatus() == 0 && dataBean.getAuctionInfo().getAuctionStatus() == 0){
+                //不可报名
+                intent.putExtra("live_type",5);
+            }else if(dataBean.getAuctionMeeting().getSignStatus() == 2 && dataBean.getAuctionInfo().getAuctionStatus() == 0){
+                //报名结束
+                intent.putExtra("live_type",5);
+            }
+            Log.e("TAG", "--houseId--" + houseId + "---auctionId" + auctionId + "userId" + ACache.get(mActivity).getAsString("userId"));
+            startActivityForResult(intent, Constant.REQUEST_LIVE_TO_MY);
+        }
+    }
 
     @Override
     public void onRefresh() {

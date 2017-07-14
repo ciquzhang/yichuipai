@@ -60,11 +60,7 @@ public class MainActivity extends BaseActivity implements MainView{
         binding.tabContainer.setAdapter(new MainTabContainerAdapter(getSupportFragmentManager(),
                 new Fragment[] {new HomeFragment(), new HomeFragment(), new AuctionListFragment(), new MyFragment()}));
         binding.tabContainer.setCurrentItem(0);
-    }
 
-    @Override
-    protected void initListener() {
-        super.initListener();
     }
 
     @Override

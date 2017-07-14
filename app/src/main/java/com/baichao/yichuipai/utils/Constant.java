@@ -8,6 +8,10 @@ public class Constant {
 
     public static final int REQUEST_LOGIN = 1;//启动登录界面的request
 
+    public static final int AUTH_PERSON = 1;//个人认证状态
+
+    public static final int AUTH_COMPANY = 2;//企业认证状态
+
     public static final int RESULT_LOGIN = 2;//登录成功的
 
     public static final int REQUEST_APPROVE_P = 3;//启动个人认证的request
@@ -37,6 +41,10 @@ public class Constant {
     public static final int REQUEST_SETTING= 12;//我的-->设置
 
     public static final int RESULT_SETTING= 13;//退出登录成功
+
+    public static final String ACTION_NAME= "110";//登录成功发送广播
+
+    public static final String ACTION_COLLECT= "111";//收藏成功发送的广播
 
     public static final int TAKE_PICTURE_FRONT = 0;//选择拍照(正面)
     public static final int CHOOSE_PICTURE_FRONT = 1;//选择相册(正面)

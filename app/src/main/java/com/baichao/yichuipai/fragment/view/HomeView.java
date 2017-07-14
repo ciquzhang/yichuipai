@@ -1,5 +1,6 @@
 package com.baichao.yichuipai.fragment.view;
 
+import com.baichao.yichuipai.activity.module.HouseInfoDetailBean;
 import com.baichao.yichuipai.fragment.moudule.HomeBean;
 
 import java.util.List;
@@ -12,4 +13,5 @@ public interface HomeView {
     void showToast(String msg);
     void loadSuccessful(List<HomeBean.DataBean.PageDataBean> list);
     void refreshSuccessful(List<HomeBean.DataBean.PageDataBean> list);
+    void netForItemsSuccess(HouseInfoDetailBean.DataBean dataBean,String houseId,String auctionId);
 }

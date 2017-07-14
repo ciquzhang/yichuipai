@@ -4,6 +4,7 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.baichao.yichuipai.R;
@@ -38,8 +39,7 @@ public class LiveActivity extends BaseActivity implements NoLiveView {
     @Override
     protected void initData() {
         super.initData();
-        presenter.netForData(getIntent().getIntExtra("houseId",0)+"",
-                getIntent().getIntExtra("auctionId" , 0)+"");
+        presenter.netForItemList(getIntent().getStringExtra("houseId"),getIntent().getStringExtra("auctionId"));
     }
 
     @Override
@@ -47,13 +47,7 @@ public class LiveActivity extends BaseActivity implements NoLiveView {
         super.initListener();
     }
 
-    @Override
-    public void netSuccess(HouseInfoDetailBean.DataBean dataBean,String houseId, String auctionId) {
-        tabSetting(dataBean,houseId,auctionId);//基本设置
-    }
-
-    private void tabSetting(HouseInfoDetailBean.DataBean dataBean,String houseId, String auctionId) {
-        int live_type = getIntent().getIntExtra("live_type",0);
+    private void tabSetting(HouseInfoDetailBean.DataBean dataBean,String houseId, String auctionId,int live_type) {
         ArrayList<String> titles = new ArrayList<>();
         titles.add("基本信息");
         titles.add("图文信息");
@@ -70,11 +64,31 @@ public class LiveActivity extends BaseActivity implements NoLiveView {
         binding.liveTab.setTabGravity(TabLayout.GRAVITY_FILL);
         binding.liveTab.setTabMode(TabLayout.MODE_FIXED);
         binding.liveTab.setupWithViewPager(binding.liveVp);
-//        presenter.setIndicator(binding.liveTab,10,10);
     }
 
     @Override
     public void showToast(String msg) {
         Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void netForItemsSuccess(HouseInfoDetailBean.DataBean dataBean, String houseId, String auctionId) {
+        int live_type = 0;
+        Log.e("TAG", "getSignStatus" + dataBean.getAuctionMeeting().getSignStatus());
+        Log.e("TAG", "getAuctionStatus" + dataBean.getAuctionInfo().getAuctionStatus());
+        Log.e("TAG", "getSignStatus" + dataBean.getHouseInfo().getSeeHouseStatus());
+        if(dataBean.getAuctionMeeting().getSignStatus() == 1 && dataBean.getAuctionInfo().getAuctionStatus() == 0 &&
+                dataBean.getHouseInfo().getSeeHouseStatus() == 1){
+            //看房并且可以报名
+            live_type = 2;
+        }else if(dataBean.getAuctionMeeting().getSignStatus() == 0 && dataBean.getAuctionInfo().getAuctionStatus() == 0 &&
+                dataBean.getHouseInfo().getSeeHouseStatus() == 1){
+            //看房不可报名
+            live_type = 3;
+        }else if(dataBean.getAuctionMeeting().getSignStatus() == 2 && dataBean.getAuctionInfo().getAuctionStatus() == 2){
+            //拍卖中
+            live_type = 1;
+        }
+        tabSetting(dataBean,houseId,auctionId,live_type);
     }
 }

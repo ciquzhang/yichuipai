@@ -33,17 +33,17 @@
                     android:id="@+id/frag_my_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="未登录"
                     android:textSize="36px"
+                    android:text="未登录"
                     android:textColor="#ffffff"/>
 
                 <TextView
                     android:id="@+id/frag_my_msg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="个人信息"
                     android:textSize="28px"
                     android:layout_marginTop="20px"
+                    android:text="个人信息"
                     android:textColor="#CCF0E7"/>
             </com.zhy.autolayout.AutoLinearLayout>
 
@@ -133,8 +133,8 @@
                     android:layout_centerVertical="true"
                     android:layout_toLeftOf="@+id/frag_my_img_2"
                     android:layout_marginRight="12px"
-                    android:text="未认证"
                     android:textColor="#999999"
+                    android:text="未认证"
                     android:textSize="28px"/>
 
                 <ImageView

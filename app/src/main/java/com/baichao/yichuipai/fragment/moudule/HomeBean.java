@@ -11,7 +11,7 @@ public class HomeBean {
     /**
      * code : 1
      * msg : 操作成功！
-     * data : {"num":1,"rowCount":12,"startRow":0,"pageSize":5,"navCount":3,"prev":1,"next":2,"first":1,"last":3,"begin":1,"end":3,"navNum":5,"parameter":null,"pageData":[{"houseId":25,"title":"滇池旅游度假区别墅火热拍卖中","evalautePrice":1000000,"imgUrl":"","houseStatus":1,"seeHouseStatus":0,"startPrice":100000,"auctionStartTime":"2017-06-22 16:03:12.0","currentPrice":1000002,"collectionCount":0,"houseVideo":"","watchCount":0,"bidCount":6,"auctionId":5,"pv":0,"signStatus":0,"liveStatus":0,"auctionStatus":0},{"houseId":27,"title":"滇池旅游度假区别墅火热拍卖中","evalautePrice":1000000,"imgUrl":"","houseStatus":1,"seeHouseStatus":0,"startPrice":100000,"auctionStartTime":null,"currentPrice":0,"collectionCount":0,"houseVideo":"","watchCount":0,"bidCount":3,"auctionId":7,"pv":0,"signStatus":0,"liveStatus":0,"auctionStatus":0},{"houseId":29,"title":"滇池旅游度假区别墅火热拍卖中","evalautePrice":1000000,"imgUrl":"","houseStatus":1,"seeHouseStatus":0,"startPrice":100000,"auctionStartTime":null,"currentPrice":0,"collectionCount":0,"houseVideo":"","watchCount":0,"bidCount":3,"auctionId":9,"pv":0,"signStatus":0,"liveStatus":0,"auctionStatus":0},{"houseId":31,"title":"滇池旅游度假区别墅火热拍卖中","evalautePrice":1000000,"imgUrl":"","houseStatus":1,"seeHouseStatus":0,"startPrice":100000,"auctionStartTime":null,"currentPrice":0,"collectionCount":0,"houseVideo":"","watchCount":0,"bidCount":3,"auctionId":11,"pv":0,"signStatus":0,"liveStatus":0,"auctionStatus":0},{"houseId":33,"title":"滇池旅游度假区别墅火热拍卖中","evalautePrice":1000000,"imgUrl":"","houseStatus":1,"seeHouseStatus":0,"startPrice":100000,"auctionStartTime":null,"currentPrice":0,"collectionCount":0,"houseVideo":"","watchCount":0,"bidCount":3,"auctionId":13,"pv":0,"signStatus":0,"liveStatus":0,"auctionStatus":0}]}
+     * data : {"num":1,"rowCount":5,"startRow":0,"pageSize":5,"navCount":1,"prev":1,"next":1,"first":1,"last":1,"begin":1,"end":1,"navNum":5,"parameter":null,"pageData":[{"houseId":8895,"title":"云南映象-501","evalautePrice":1000000,"imgUrl":"/2017/07/13/201707131754001.jpg","houseStatus":1,"seeHouseStatus":0,"startPrice":500000,"auctionStartTime":null,"currentPrice":500000,"collectionCount":0,"houseVideo":"","watchCount":0,"bidCount":0,"auctionId":8897,"pv":4,"liveStatus":0,"auctionStatus":2,"meetingId":949,"signStatus":2,"regionId":530100,"meetingName":"云南映象专场拍卖第二次"},{"houseId":8894,"title":"云南映象-401","evalautePrice":1000000,"imgUrl":"/2017/07/13/201707131752271.jpg","houseStatus":1,"seeHouseStatus":0,"startPrice":400000,"auctionStartTime":null,"currentPrice":0,"collectionCount":0,"houseVideo":"","watchCount":0,"bidCount":0,"auctionId":8896,"pv":4,"liveStatus":0,"auctionStatus":0,"meetingId":949,"signStatus":2,"regionId":530100,"meetingName":"云南映象专场拍卖第二次"},{"houseId":8893,"title":"云南映象-301","evalautePrice":1000000,"imgUrl":"/2017/07/13/201707131751271.jpg","houseStatus":1,"seeHouseStatus":0,"startPrice":300000,"auctionStartTime":null,"currentPrice":0,"collectionCount":0,"houseVideo":"","watchCount":0,"bidCount":0,"auctionId":8895,"pv":0,"liveStatus":0,"auctionStatus":0,"meetingId":949,"signStatus":2,"regionId":530100,"meetingName":"云南映象专场拍卖第二次"},{"houseId":8897,"title":"云南映象-701","evalautePrice":1000000,"imgUrl":"/2017/07/13/201707131756131.jpg","houseStatus":1,"seeHouseStatus":0,"startPrice":700000,"auctionStartTime":null,"currentPrice":0,"collectionCount":0,"houseVideo":"","watchCount":0,"bidCount":0,"auctionId":8893,"pv":0,"liveStatus":0,"auctionStatus":0,"meetingId":949,"signStatus":2,"regionId":530100,"meetingName":"云南映象专场拍卖第二次"},{"houseId":8896,"title":"云南映象-601","evalautePrice":1000000,"imgUrl":"/2017/07/13/201707131755011.jpg","houseStatus":1,"seeHouseStatus":0,"startPrice":600000,"auctionStartTime":null,"currentPrice":0,"collectionCount":0,"houseVideo":"","watchCount":0,"bidCount":0,"auctionId":8894,"pv":0,"liveStatus":0,"auctionStatus":0,"meetingId":949,"signStatus":2,"regionId":530100,"meetingName":"云南映象专场拍卖第二次"}]}
      */
 
     private String code;
@@ -45,19 +45,19 @@ public class HomeBean {
     public static class DataBean {
         /**
          * num : 1
-         * rowCount : 12
+         * rowCount : 5
          * startRow : 0
          * pageSize : 5
-         * navCount : 3
+         * navCount : 1
          * prev : 1
-         * next : 2
+         * next : 1
          * first : 1
-         * last : 3
+         * last : 1
          * begin : 1
-         * end : 3
+         * end : 1
          * navNum : 5
          * parameter : null
-         * pageData : [{"houseId":25,"title":"滇池旅游度假区别墅火热拍卖中","evalautePrice":1000000,"imgUrl":"","houseStatus":1,"seeHouseStatus":0,"startPrice":100000,"auctionStartTime":"2017-06-22 16:03:12.0","currentPrice":1000002,"collectionCount":0,"houseVideo":"","watchCount":0,"bidCount":6,"auctionId":5,"pv":0,"signStatus":0,"liveStatus":0,"auctionStatus":0},{"houseId":27,"title":"滇池旅游度假区别墅火热拍卖中","evalautePrice":1000000,"imgUrl":"","houseStatus":1,"seeHouseStatus":0,"startPrice":100000,"auctionStartTime":null,"currentPrice":0,"collectionCount":0,"houseVideo":"","watchCount":0,"bidCount":3,"auctionId":7,"pv":0,"signStatus":0,"liveStatus":0,"auctionStatus":0},{"houseId":29,"title":"滇池旅游度假区别墅火热拍卖中","evalautePrice":1000000,"imgUrl":"","houseStatus":1,"seeHouseStatus":0,"startPrice":100000,"auctionStartTime":null,"currentPrice":0,"collectionCount":0,"houseVideo":"","watchCount":0,"bidCount":3,"auctionId":9,"pv":0,"signStatus":0,"liveStatus":0,"auctionStatus":0},{"houseId":31,"title":"滇池旅游度假区别墅火热拍卖中","evalautePrice":1000000,"imgUrl":"","houseStatus":1,"seeHouseStatus":0,"startPrice":100000,"auctionStartTime":null,"currentPrice":0,"collectionCount":0,"houseVideo":"","watchCount":0,"bidCount":3,"auctionId":11,"pv":0,"signStatus":0,"liveStatus":0,"auctionStatus":0},{"houseId":33,"title":"滇池旅游度假区别墅火热拍卖中","evalautePrice":1000000,"imgUrl":"","houseStatus":1,"seeHouseStatus":0,"startPrice":100000,"auctionStartTime":null,"currentPrice":0,"collectionCount":0,"houseVideo":"","watchCount":0,"bidCount":3,"auctionId":13,"pv":0,"signStatus":0,"liveStatus":0,"auctionStatus":0}]
+         * pageData : [{"houseId":8895,"title":"云南映象-501","evalautePrice":1000000,"imgUrl":"/2017/07/13/201707131754001.jpg","houseStatus":1,"seeHouseStatus":0,"startPrice":500000,"auctionStartTime":null,"currentPrice":500000,"collectionCount":0,"houseVideo":"","watchCount":0,"bidCount":0,"auctionId":8897,"pv":4,"liveStatus":0,"auctionStatus":2,"meetingId":949,"signStatus":2,"regionId":530100,"meetingName":"云南映象专场拍卖第二次"},{"houseId":8894,"title":"云南映象-401","evalautePrice":1000000,"imgUrl":"/2017/07/13/201707131752271.jpg","houseStatus":1,"seeHouseStatus":0,"startPrice":400000,"auctionStartTime":null,"currentPrice":0,"collectionCount":0,"houseVideo":"","watchCount":0,"bidCount":0,"auctionId":8896,"pv":4,"liveStatus":0,"auctionStatus":0,"meetingId":949,"signStatus":2,"regionId":530100,"meetingName":"云南映象专场拍卖第二次"},{"houseId":8893,"title":"云南映象-301","evalautePrice":1000000,"imgUrl":"/2017/07/13/201707131751271.jpg","houseStatus":1,"seeHouseStatus":0,"startPrice":300000,"auctionStartTime":null,"currentPrice":0,"collectionCount":0,"houseVideo":"","watchCount":0,"bidCount":0,"auctionId":8895,"pv":0,"liveStatus":0,"auctionStatus":0,"meetingId":949,"signStatus":2,"regionId":530100,"meetingName":"云南映象专场拍卖第二次"},{"houseId":8897,"title":"云南映象-701","evalautePrice":1000000,"imgUrl":"/2017/07/13/201707131756131.jpg","houseStatus":1,"seeHouseStatus":0,"startPrice":700000,"auctionStartTime":null,"currentPrice":0,"collectionCount":0,"houseVideo":"","watchCount":0,"bidCount":0,"auctionId":8893,"pv":0,"liveStatus":0,"auctionStatus":0,"meetingId":949,"signStatus":2,"regionId":530100,"meetingName":"云南映象专场拍卖第二次"},{"houseId":8896,"title":"云南映象-601","evalautePrice":1000000,"imgUrl":"/2017/07/13/201707131755011.jpg","houseStatus":1,"seeHouseStatus":0,"startPrice":600000,"auctionStartTime":null,"currentPrice":0,"collectionCount":0,"houseVideo":"","watchCount":0,"bidCount":0,"auctionId":8894,"pv":0,"liveStatus":0,"auctionStatus":0,"meetingId":949,"signStatus":2,"regionId":530100,"meetingName":"云南映象专场拍卖第二次"}]
          */
 
         private int num;
@@ -189,24 +189,27 @@ public class HomeBean {
 
         public static class PageDataBean {
             /**
-             * houseId : 25
-             * title : 滇池旅游度假区别墅火热拍卖中
+             * houseId : 8895
+             * title : 云南映象-501
              * evalautePrice : 1000000
-             * imgUrl :
+             * imgUrl : /2017/07/13/201707131754001.jpg
              * houseStatus : 1
              * seeHouseStatus : 0
-             * startPrice : 100000
-             * auctionStartTime : 2017-06-22 16:03:12.0
-             * currentPrice : 1000002
+             * startPrice : 500000
+             * auctionStartTime : null
+             * currentPrice : 500000
              * collectionCount : 0
              * houseVideo :
              * watchCount : 0
-             * bidCount : 6
-             * auctionId : 5
-             * pv : 0
-             * signStatus : 0
+             * bidCount : 0
+             * auctionId : 8897
+             * pv : 4
              * liveStatus : 0
-             * auctionStatus : 0
+             * auctionStatus : 2
+             * meetingId : 949
+             * signStatus : 2
+             * regionId : 530100
+             * meetingName : 云南映象专场拍卖第二次
              */
 
             private int houseId;
@@ -216,7 +219,7 @@ public class HomeBean {
             private int houseStatus;
             private int seeHouseStatus;
             private int startPrice;
-            private String auctionStartTime;
+            private Object auctionStartTime;
             private int currentPrice;
             private int collectionCount;
             private String houseVideo;
@@ -224,9 +227,12 @@ public class HomeBean {
             private int bidCount;
             private int auctionId;
             private int pv;
-            private int signStatus;
             private int liveStatus;
             private int auctionStatus;
+            private int meetingId;
+            private int signStatus;
+            private int regionId;
+            private String meetingName;
 
             public int getHouseId() {
                 return houseId;
@@ -284,11 +290,11 @@ public class HomeBean {
                 this.startPrice = startPrice;
             }
 
-            public String getAuctionStartTime() {
+            public Object getAuctionStartTime() {
                 return auctionStartTime;
             }
 
-            public void setAuctionStartTime(String auctionStartTime) {
+            public void setAuctionStartTime(Object auctionStartTime) {
                 this.auctionStartTime = auctionStartTime;
             }
 
@@ -348,14 +354,6 @@ public class HomeBean {
                 this.pv = pv;
             }
 
-            public int getSignStatus() {
-                return signStatus;
-            }
-
-            public void setSignStatus(int signStatus) {
-                this.signStatus = signStatus;
-            }
-
             public int getLiveStatus() {
                 return liveStatus;
             }
@@ -370,6 +368,38 @@ public class HomeBean {
 
             public void setAuctionStatus(int auctionStatus) {
                 this.auctionStatus = auctionStatus;
+            }
+
+            public int getMeetingId() {
+                return meetingId;
+            }
+
+            public void setMeetingId(int meetingId) {
+                this.meetingId = meetingId;
+            }
+
+            public int getSignStatus() {
+                return signStatus;
+            }
+
+            public void setSignStatus(int signStatus) {
+                this.signStatus = signStatus;
+            }
+
+            public int getRegionId() {
+                return regionId;
+            }
+
+            public void setRegionId(int regionId) {
+                this.regionId = regionId;
+            }
+
+            public String getMeetingName() {
+                return meetingName;
+            }
+
+            public void setMeetingName(String meetingName) {
+                this.meetingName = meetingName;
             }
         }
     }

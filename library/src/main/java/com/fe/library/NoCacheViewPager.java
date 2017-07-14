@@ -9,12 +9,12 @@ import android.view.MotionEvent;
  * Created by pll on 2017/5/2.
  */
 
-public class MyViewPager extends ViewPager {
-    public MyViewPager(Context context) {
+public class NoCacheViewPager extends ViewPager {
+    public NoCacheViewPager(Context context) {
         super(context);
     }
 
-    public MyViewPager(Context context, AttributeSet attrs) {
+    public NoCacheViewPager(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 

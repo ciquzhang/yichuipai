@@ -11,7 +11,7 @@ public class CollectionListBean {
     /**
      * code : 1
      * msg : 操作成功！
-     * data : {"num":1,"rowCount":2,"startRow":0,"pageSize":5,"navCount":1,"prev":1,"next":1,"first":1,"last":1,"begin":1,"end":1,"navNum":5,"parameter":null,"pageData":[{"houseInfo":{"id":62,"housePhotoId":0,"title":"流拍测试","imgUrl":"/2017/06/30/201706301012443.jpg","district":"昆明","location":"北市区","fullView":"","evalautePrice":455225,"sort":2,"pv":102,"seeStartTime":1496964929000,"shelfTime":null,"createTime":1498788897000,"houseStatus":1,"status":1,"seeHouseStatus":0,"collectionId":119,"collectionType":0,"collectionStatus":1,"userId":30,"collectionHouseId":62,"auctionId":35},"auctionInfo":{"id":35,"houseId":62,"anchorId":0,"type":"变卖","startPrice":1000000,"increasePrice":1000,"currentPrice":0,"collectionCount":2,"houseVideo":"","watchCount":0,"bidCount":2,"createTime":1498788961000,"bidRule":"价高者得","consultWay":"杨小姐18547899632","sellPeriod":"36天","auctionStartTime":1496006710000,"signStartTime":1493591414000,"signEndTime":1496093116000,"signStatus":0,"liveStatus":0,"auctionStatus":0,"status":1},"auctionRecord":null,"auctionResult":null,"countRecord":0},{"houseInfo":{"id":63,"housePhotoId":0,"title":"正常拍卖","imgUrl":"/2017/06/30/20170630102652avatarmale.png","district":"订单","location":"点点滴滴","fullView":"","evalautePrice":455225,"sort":100,"pv":103,"seeStartTime":1496963726000,"shelfTime":null,"createTime":1498789735000,"houseStatus":1,"status":1,"seeHouseStatus":0,"collectionId":118,"collectionType":0,"collectionStatus":1,"userId":30,"collectionHouseId":63,"auctionId":36},"auctionInfo":{"id":36,"houseId":63,"anchorId":0,"type":"变卖","startPrice":1000000,"increasePrice":10000,"currentPrice":40000,"collectionCount":2,"houseVideo":"","watchCount":0,"bidCount":1,"createTime":1498789804000,"bidRule":"价高者得","consultWay":"张先生:13588888888","sellPeriod":"36天","auctionStartTime":1498789755000,"signStartTime":1493591417000,"signEndTime":1496713519000,"signStatus":1,"liveStatus":0,"auctionStatus":2,"status":1},"auctionRecord":{"id":47,"price":40000,"bidTime":1498806732000,"bidStatus":1,"status":1,"userId":31,"auctionId":36,"bidNo":"A240001"},"auctionResult":null,"countRecord":4}]}
+     * data : {"num":1,"rowCount":1,"startRow":0,"pageSize":5,"navCount":1,"prev":1,"next":1,"first":1,"last":1,"begin":1,"end":1,"navNum":5,"parameter":null,"pageData":[{"houseInfo":{"id":8895,"housePhotoId":0,"title":"云南映象-501","imgUrl":"/2017/07/13/201707131754001.jpg","district":"530103","location":"穿金路","fullView":"","evalautePrice":1000000,"sort":3,"pv":8,"seeStartTime":null,"shelfTime":1499939942000,"createTime":1499939682000,"houseStatus":1,"status":1,"seeHouseStatus":0,"collectionId":216,"collectionType":0,"collectionStatus":1,"userId":38,"collectionHouseId":8895,"auctionId":8897},"auctionMeeting":{"id":949,"regionId":530100,"name":"云南映象专场拍卖第二次","createOrgUserId":"admin","updateOrgUserId":"admin","depositPrice":20000,"signCount":0,"meetingStatus":1,"signStatus":2,"shelfStatus":1,"signStartTime":1499875200000,"signEndTime":1499939842000,"startTime":1499875200000,"createTime":1499939864000,"updateTime":1499941730000,"status":1},"auctionInfo":{"id":8897,"houseId":8895,"anchorId":0,"type":"变卖","startPrice":500000,"increasePrice":5000,"currentPrice":500000,"collectionCount":2,"houseVideo":"","watchCount":0,"bidCount":0,"createTime":1499940203000,"bidRule":"价高者得","consultWay":"张三：10000","sellPeriod":"30天","auctionStartTime":null,"signStartTime":null,"signEndTime":null,"signStatus":0,"liveStatus":0,"auctionStatus":2,"status":1,"auctionMeetingId":949},"auctionRecord":null,"auctionResult":null,"countRecord":0}]}
      */
 
     private String code;
@@ -45,7 +45,7 @@ public class CollectionListBean {
     public static class DataBean {
         /**
          * num : 1
-         * rowCount : 2
+         * rowCount : 1
          * startRow : 0
          * pageSize : 5
          * navCount : 1
@@ -57,7 +57,7 @@ public class CollectionListBean {
          * end : 1
          * navNum : 5
          * parameter : null
-         * pageData : [{"houseInfo":{"id":62,"housePhotoId":0,"title":"流拍测试","imgUrl":"/2017/06/30/201706301012443.jpg","district":"昆明","location":"北市区","fullView":"","evalautePrice":455225,"sort":2,"pv":102,"seeStartTime":1496964929000,"shelfTime":null,"createTime":1498788897000,"houseStatus":1,"status":1,"seeHouseStatus":0,"collectionId":119,"collectionType":0,"collectionStatus":1,"userId":30,"collectionHouseId":62,"auctionId":35},"auctionInfo":{"id":35,"houseId":62,"anchorId":0,"type":"变卖","startPrice":1000000,"increasePrice":1000,"currentPrice":0,"collectionCount":2,"houseVideo":"","watchCount":0,"bidCount":2,"createTime":1498788961000,"bidRule":"价高者得","consultWay":"杨小姐18547899632","sellPeriod":"36天","auctionStartTime":1496006710000,"signStartTime":1493591414000,"signEndTime":1496093116000,"signStatus":0,"liveStatus":0,"auctionStatus":0,"status":1},"auctionRecord":null,"auctionResult":null,"countRecord":0},{"houseInfo":{"id":63,"housePhotoId":0,"title":"正常拍卖","imgUrl":"/2017/06/30/20170630102652avatarmale.png","district":"订单","location":"点点滴滴","fullView":"","evalautePrice":455225,"sort":100,"pv":103,"seeStartTime":1496963726000,"shelfTime":null,"createTime":1498789735000,"houseStatus":1,"status":1,"seeHouseStatus":0,"collectionId":118,"collectionType":0,"collectionStatus":1,"userId":30,"collectionHouseId":63,"auctionId":36},"auctionInfo":{"id":36,"houseId":63,"anchorId":0,"type":"变卖","startPrice":1000000,"increasePrice":10000,"currentPrice":40000,"collectionCount":2,"houseVideo":"","watchCount":0,"bidCount":1,"createTime":1498789804000,"bidRule":"价高者得","consultWay":"张先生:13588888888","sellPeriod":"36天","auctionStartTime":1498789755000,"signStartTime":1493591417000,"signEndTime":1496713519000,"signStatus":1,"liveStatus":0,"auctionStatus":2,"status":1},"auctionRecord":{"id":47,"price":40000,"bidTime":1498806732000,"bidStatus":1,"status":1,"userId":31,"auctionId":36,"bidNo":"A240001"},"auctionResult":null,"countRecord":4}]
+         * pageData : [{"houseInfo":{"id":8895,"housePhotoId":0,"title":"云南映象-501","imgUrl":"/2017/07/13/201707131754001.jpg","district":"530103","location":"穿金路","fullView":"","evalautePrice":1000000,"sort":3,"pv":8,"seeStartTime":null,"shelfTime":1499939942000,"createTime":1499939682000,"houseStatus":1,"status":1,"seeHouseStatus":0,"collectionId":216,"collectionType":0,"collectionStatus":1,"userId":38,"collectionHouseId":8895,"auctionId":8897},"auctionMeeting":{"id":949,"regionId":530100,"name":"云南映象专场拍卖第二次","createOrgUserId":"admin","updateOrgUserId":"admin","depositPrice":20000,"signCount":0,"meetingStatus":1,"signStatus":2,"shelfStatus":1,"signStartTime":1499875200000,"signEndTime":1499939842000,"startTime":1499875200000,"createTime":1499939864000,"updateTime":1499941730000,"status":1},"auctionInfo":{"id":8897,"houseId":8895,"anchorId":0,"type":"变卖","startPrice":500000,"increasePrice":5000,"currentPrice":500000,"collectionCount":2,"houseVideo":"","watchCount":0,"bidCount":0,"createTime":1499940203000,"bidRule":"价高者得","consultWay":"张三：10000","sellPeriod":"30天","auctionStartTime":null,"signStartTime":null,"signEndTime":null,"signStatus":0,"liveStatus":0,"auctionStatus":2,"status":1,"auctionMeetingId":949},"auctionRecord":null,"auctionResult":null,"countRecord":0}]
          */
 
         private int num;
@@ -189,14 +189,16 @@ public class CollectionListBean {
 
         public static class PageDataBean {
             /**
-             * houseInfo : {"id":62,"housePhotoId":0,"title":"流拍测试","imgUrl":"/2017/06/30/201706301012443.jpg","district":"昆明","location":"北市区","fullView":"","evalautePrice":455225,"sort":2,"pv":102,"seeStartTime":1496964929000,"shelfTime":null,"createTime":1498788897000,"houseStatus":1,"status":1,"seeHouseStatus":0,"collectionId":119,"collectionType":0,"collectionStatus":1,"userId":30,"collectionHouseId":62,"auctionId":35}
-             * auctionInfo : {"id":35,"houseId":62,"anchorId":0,"type":"变卖","startPrice":1000000,"increasePrice":1000,"currentPrice":0,"collectionCount":2,"houseVideo":"","watchCount":0,"bidCount":2,"createTime":1498788961000,"bidRule":"价高者得","consultWay":"杨小姐18547899632","sellPeriod":"36天","auctionStartTime":1496006710000,"signStartTime":1493591414000,"signEndTime":1496093116000,"signStatus":0,"liveStatus":0,"auctionStatus":0,"status":1}
+             * houseInfo : {"id":8895,"housePhotoId":0,"title":"云南映象-501","imgUrl":"/2017/07/13/201707131754001.jpg","district":"530103","location":"穿金路","fullView":"","evalautePrice":1000000,"sort":3,"pv":8,"seeStartTime":null,"shelfTime":1499939942000,"createTime":1499939682000,"houseStatus":1,"status":1,"seeHouseStatus":0,"collectionId":216,"collectionType":0,"collectionStatus":1,"userId":38,"collectionHouseId":8895,"auctionId":8897}
+             * auctionMeeting : {"id":949,"regionId":530100,"name":"云南映象专场拍卖第二次","createOrgUserId":"admin","updateOrgUserId":"admin","depositPrice":20000,"signCount":0,"meetingStatus":1,"signStatus":2,"shelfStatus":1,"signStartTime":1499875200000,"signEndTime":1499939842000,"startTime":1499875200000,"createTime":1499939864000,"updateTime":1499941730000,"status":1}
+             * auctionInfo : {"id":8897,"houseId":8895,"anchorId":0,"type":"变卖","startPrice":500000,"increasePrice":5000,"currentPrice":500000,"collectionCount":2,"houseVideo":"","watchCount":0,"bidCount":0,"createTime":1499940203000,"bidRule":"价高者得","consultWay":"张三：10000","sellPeriod":"30天","auctionStartTime":null,"signStartTime":null,"signEndTime":null,"signStatus":0,"liveStatus":0,"auctionStatus":2,"status":1,"auctionMeetingId":949}
              * auctionRecord : null
              * auctionResult : null
              * countRecord : 0
              */
 
             private HouseInfoBean houseInfo;
+            private AuctionMeetingBean auctionMeeting;
             private AuctionInfoBean auctionInfo;
             private Object auctionRecord;
             private Object auctionResult;
@@ -208,6 +210,14 @@ public class CollectionListBean {
 
             public void setHouseInfo(HouseInfoBean houseInfo) {
                 this.houseInfo = houseInfo;
+            }
+
+            public AuctionMeetingBean getAuctionMeeting() {
+                return auctionMeeting;
+            }
+
+            public void setAuctionMeeting(AuctionMeetingBean auctionMeeting) {
+                this.auctionMeeting = auctionMeeting;
             }
 
             public AuctionInfoBean getAuctionInfo() {
@@ -244,28 +254,28 @@ public class CollectionListBean {
 
             public static class HouseInfoBean {
                 /**
-                 * id : 62
+                 * id : 8895
                  * housePhotoId : 0
-                 * title : 流拍测试
-                 * imgUrl : /2017/06/30/201706301012443.jpg
-                 * district : 昆明
-                 * location : 北市区
+                 * title : 云南映象-501
+                 * imgUrl : /2017/07/13/201707131754001.jpg
+                 * district : 530103
+                 * location : 穿金路
                  * fullView :
-                 * evalautePrice : 455225
-                 * sort : 2
-                 * pv : 102
-                 * seeStartTime : 1496964929000
-                 * shelfTime : null
-                 * createTime : 1498788897000
+                 * evalautePrice : 1000000
+                 * sort : 3
+                 * pv : 8
+                 * seeStartTime : null
+                 * shelfTime : 1499939942000
+                 * createTime : 1499939682000
                  * houseStatus : 1
                  * status : 1
                  * seeHouseStatus : 0
-                 * collectionId : 119
+                 * collectionId : 216
                  * collectionType : 0
                  * collectionStatus : 1
-                 * userId : 30
-                 * collectionHouseId : 62
-                 * auctionId : 35
+                 * userId : 38
+                 * collectionHouseId : 8895
+                 * auctionId : 8897
                  */
 
                 private int id;
@@ -278,8 +288,8 @@ public class CollectionListBean {
                 private int evalautePrice;
                 private int sort;
                 private int pv;
-                private long seeStartTime;
-                private Object shelfTime;
+                private Object seeStartTime;
+                private long shelfTime;
                 private long createTime;
                 private int houseStatus;
                 private int status;
@@ -371,19 +381,19 @@ public class CollectionListBean {
                     this.pv = pv;
                 }
 
-                public long getSeeStartTime() {
+                public Object getSeeStartTime() {
                     return seeStartTime;
                 }
 
-                public void setSeeStartTime(long seeStartTime) {
+                public void setSeeStartTime(Object seeStartTime) {
                     this.seeStartTime = seeStartTime;
                 }
 
-                public Object getShelfTime() {
+                public long getShelfTime() {
                     return shelfTime;
                 }
 
-                public void setShelfTime(Object shelfTime) {
+                public void setShelfTime(long shelfTime) {
                     this.shelfTime = shelfTime;
                 }
 
@@ -468,30 +478,197 @@ public class CollectionListBean {
                 }
             }
 
+            public static class AuctionMeetingBean {
+                /**
+                 * id : 949
+                 * regionId : 530100
+                 * name : 云南映象专场拍卖第二次
+                 * createOrgUserId : admin
+                 * updateOrgUserId : admin
+                 * depositPrice : 20000
+                 * signCount : 0
+                 * meetingStatus : 1
+                 * signStatus : 2
+                 * shelfStatus : 1
+                 * signStartTime : 1499875200000
+                 * signEndTime : 1499939842000
+                 * startTime : 1499875200000
+                 * createTime : 1499939864000
+                 * updateTime : 1499941730000
+                 * status : 1
+                 */
+
+                private int id;
+                private int regionId;
+                private String name;
+                private String createOrgUserId;
+                private String updateOrgUserId;
+                private int depositPrice;
+                private int signCount;
+                private int meetingStatus;
+                private int signStatus;
+                private int shelfStatus;
+                private long signStartTime;
+                private long signEndTime;
+                private long startTime;
+                private long createTime;
+                private long updateTime;
+                private int status;
+
+                public int getId() {
+                    return id;
+                }
+
+                public void setId(int id) {
+                    this.id = id;
+                }
+
+                public int getRegionId() {
+                    return regionId;
+                }
+
+                public void setRegionId(int regionId) {
+                    this.regionId = regionId;
+                }
+
+                public String getName() {
+                    return name;
+                }
+
+                public void setName(String name) {
+                    this.name = name;
+                }
+
+                public String getCreateOrgUserId() {
+                    return createOrgUserId;
+                }
+
+                public void setCreateOrgUserId(String createOrgUserId) {
+                    this.createOrgUserId = createOrgUserId;
+                }
+
+                public String getUpdateOrgUserId() {
+                    return updateOrgUserId;
+                }
+
+                public void setUpdateOrgUserId(String updateOrgUserId) {
+                    this.updateOrgUserId = updateOrgUserId;
+                }
+
+                public int getDepositPrice() {
+                    return depositPrice;
+                }
+
+                public void setDepositPrice(int depositPrice) {
+                    this.depositPrice = depositPrice;
+                }
+
+                public int getSignCount() {
+                    return signCount;
+                }
+
+                public void setSignCount(int signCount) {
+                    this.signCount = signCount;
+                }
+
+                public int getMeetingStatus() {
+                    return meetingStatus;
+                }
+
+                public void setMeetingStatus(int meetingStatus) {
+                    this.meetingStatus = meetingStatus;
+                }
+
+                public int getSignStatus() {
+                    return signStatus;
+                }
+
+                public void setSignStatus(int signStatus) {
+                    this.signStatus = signStatus;
+                }
+
+                public int getShelfStatus() {
+                    return shelfStatus;
+                }
+
+                public void setShelfStatus(int shelfStatus) {
+                    this.shelfStatus = shelfStatus;
+                }
+
+                public long getSignStartTime() {
+                    return signStartTime;
+                }
+
+                public void setSignStartTime(long signStartTime) {
+                    this.signStartTime = signStartTime;
+                }
+
+                public long getSignEndTime() {
+                    return signEndTime;
+                }
+
+                public void setSignEndTime(long signEndTime) {
+                    this.signEndTime = signEndTime;
+                }
+
+                public long getStartTime() {
+                    return startTime;
+                }
+
+                public void setStartTime(long startTime) {
+                    this.startTime = startTime;
+                }
+
+                public long getCreateTime() {
+                    return createTime;
+                }
+
+                public void setCreateTime(long createTime) {
+                    this.createTime = createTime;
+                }
+
+                public long getUpdateTime() {
+                    return updateTime;
+                }
+
+                public void setUpdateTime(long updateTime) {
+                    this.updateTime = updateTime;
+                }
+
+                public int getStatus() {
+                    return status;
+                }
+
+                public void setStatus(int status) {
+                    this.status = status;
+                }
+            }
+
             public static class AuctionInfoBean {
                 /**
-                 * id : 35
-                 * houseId : 62
+                 * id : 8897
+                 * houseId : 8895
                  * anchorId : 0
                  * type : 变卖
-                 * startPrice : 1000000
-                 * increasePrice : 1000
-                 * currentPrice : 0
+                 * startPrice : 500000
+                 * increasePrice : 5000
+                 * currentPrice : 500000
                  * collectionCount : 2
                  * houseVideo :
                  * watchCount : 0
-                 * bidCount : 2
-                 * createTime : 1498788961000
+                 * bidCount : 0
+                 * createTime : 1499940203000
                  * bidRule : 价高者得
-                 * consultWay : 杨小姐18547899632
-                 * sellPeriod : 36天
-                 * auctionStartTime : 1496006710000
-                 * signStartTime : 1493591414000
-                 * signEndTime : 1496093116000
+                 * consultWay : 张三：10000
+                 * sellPeriod : 30天
+                 * auctionStartTime : null
+                 * signStartTime : null
+                 * signEndTime : null
                  * signStatus : 0
                  * liveStatus : 0
-                 * auctionStatus : 0
+                 * auctionStatus : 2
                  * status : 1
+                 * auctionMeetingId : 949
                  */
 
                 private int id;
@@ -509,13 +686,14 @@ public class CollectionListBean {
                 private String bidRule;
                 private String consultWay;
                 private String sellPeriod;
-                private long auctionStartTime;
-                private long signStartTime;
-                private long signEndTime;
+                private Object auctionStartTime;
+                private Object signStartTime;
+                private Object signEndTime;
                 private int signStatus;
                 private int liveStatus;
                 private int auctionStatus;
                 private int status;
+                private int auctionMeetingId;
 
                 public int getId() {
                     return id;
@@ -637,27 +815,27 @@ public class CollectionListBean {
                     this.sellPeriod = sellPeriod;
                 }
 
-                public long getAuctionStartTime() {
+                public Object getAuctionStartTime() {
                     return auctionStartTime;
                 }
 
-                public void setAuctionStartTime(long auctionStartTime) {
+                public void setAuctionStartTime(Object auctionStartTime) {
                     this.auctionStartTime = auctionStartTime;
                 }
 
-                public long getSignStartTime() {
+                public Object getSignStartTime() {
                     return signStartTime;
                 }
 
-                public void setSignStartTime(long signStartTime) {
+                public void setSignStartTime(Object signStartTime) {
                     this.signStartTime = signStartTime;
                 }
 
-                public long getSignEndTime() {
+                public Object getSignEndTime() {
                     return signEndTime;
                 }
 
-                public void setSignEndTime(long signEndTime) {
+                public void setSignEndTime(Object signEndTime) {
                     this.signEndTime = signEndTime;
                 }
 
@@ -691,6 +869,14 @@ public class CollectionListBean {
 
                 public void setStatus(int status) {
                     this.status = status;
+                }
+
+                public int getAuctionMeetingId() {
+                    return auctionMeetingId;
+                }
+
+                public void setAuctionMeetingId(int auctionMeetingId) {
+                    this.auctionMeetingId = auctionMeetingId;
                 }
             }
         }

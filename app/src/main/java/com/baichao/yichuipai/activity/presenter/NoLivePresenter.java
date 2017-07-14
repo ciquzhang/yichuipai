@@ -5,5 +5,5 @@ package com.baichao.yichuipai.activity.presenter;
  */
 
 public interface NoLivePresenter {
-    void netForData(String houseId, String auctionId);
+    void netForItemList(String houseId,String auctionId);
 }

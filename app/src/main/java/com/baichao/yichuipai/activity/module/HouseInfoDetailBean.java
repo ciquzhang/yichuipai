@@ -1,12 +1,13 @@
 package com.baichao.yichuipai.activity.module;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by Administrator on 2017/6/26.
  */
 
-public class HouseInfoDetailBean {
+public class HouseInfoDetailBean{
 
     /**
      * code : 1
@@ -42,7 +43,7 @@ public class HouseInfoDetailBean {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Serializable{
         /**
          * houseInfo : {"id":63,"housePhotoId":0,"title":"正常拍卖","imgUrl":"/2017/06/28/2017062811562354.jpg","district":"订单","location":"点点滴滴","fullView":"","evalautePrice":455225,"sort":100,"pv":104,"seeStartTime":1496963726000,"shelfTime":null,"createTime":1498789735000,"houseStatus":1,"status":1,"content":"<p>点点点<\/p>","seeHouseStatus":0}
          * auctionInfo : {"id":37,"houseId":63,"anchorId":0,"type":"编码","startPrice":null,"increasePrice":10000,"currentPrice":10000,"collectionCount":0,"houseVideo":"","watchCount":0,"bidCount":0,"createTime":1499132078000,"bidRule":"价高者得","consultWay":"生:13588888888","sellPeriod":"36天","auctionStartTime":1499132095000,"signStartTime":1499132098000,"signEndTime":1499132101000,"signStatus":1,"liveStatus":1,"auctionStatus":2,"status":1,"auctionMeetingId":1}
@@ -59,7 +60,7 @@ public class HouseInfoDetailBean {
         private HouseInfoBean houseInfo;
         private AuctionInfoBean auctionInfo;
         private List<AuctionRecordsBean> auctionRecords;
-        private Object auctionResult;
+        private AuctionResultBean auctionResult;
         private UserInfoBean userInfo;
         private AuctionSignRecordBean auctionSignRecord;
         private HouseCollectionBean houseCollection;
@@ -91,11 +92,11 @@ public class HouseInfoDetailBean {
             this.auctionRecords = auctionRecords;
         }
 
-        public Object getAuctionResult() {
+        public AuctionResultBean getAuctionResult() {
             return auctionResult;
         }
 
-        public void setAuctionResult(Object auctionResult) {
+        public void setAuctionResult(AuctionResultBean auctionResult) {
             this.auctionResult = auctionResult;
         }
 
@@ -147,7 +148,7 @@ public class HouseInfoDetailBean {
             this.auctionDeposits = auctionDeposits;
         }
 
-        public static class AuctionSignRecordBean{
+        public static class AuctionSignRecordBean implements Serializable{
             /**
              * id : 17
              * bidNo : A1b0103
@@ -348,7 +349,7 @@ public class HouseInfoDetailBean {
             }
         }
 
-        public static class HouseInfoBean {
+        public static class HouseInfoBean implements Serializable{
             /**
              * id : 63
              * housePhotoId : 0
@@ -524,7 +525,91 @@ public class HouseInfoDetailBean {
             }
         }
 
-        public static class AuctionInfoBean {
+        public static class AuctionResultBean implements Serializable{
+            private int id;
+            private int price;
+            private int tranStatus;
+            private int status;
+            private int auctionId;
+            private int houseId;
+            private int userId;
+            private Long createTime;
+            private Long tranTime;
+
+            public int getId() {
+                return id;
+            }
+
+            public void setId(int id) {
+                this.id = id;
+            }
+
+            public int getPrice() {
+                return price;
+            }
+
+            public void setPrice(int price) {
+                this.price = price;
+            }
+
+            public int getTranStatus() {
+                return tranStatus;
+            }
+
+            public void setTranStatus(int tranStatus) {
+                this.tranStatus = tranStatus;
+            }
+
+            public int getStatus() {
+                return status;
+            }
+
+            public void setStatus(int status) {
+                this.status = status;
+            }
+
+            public int getAuctionId() {
+                return auctionId;
+            }
+
+            public void setAuctionId(int auctionId) {
+                this.auctionId = auctionId;
+            }
+
+            public int getHouseId() {
+                return houseId;
+            }
+
+            public void setHouseId(int houseId) {
+                this.houseId = houseId;
+            }
+
+            public int getUserId() {
+                return userId;
+            }
+
+            public void setUserId(int userId) {
+                this.userId = userId;
+            }
+
+            public Long getCreateTime() {
+                return createTime;
+            }
+
+            public void setCreateTime(Long createTime) {
+                this.createTime = createTime;
+            }
+
+            public Long getTranTime() {
+                return tranTime;
+            }
+
+            public void setTranTime(Long tranTime) {
+                this.tranTime = tranTime;
+            }
+        }
+
+        public static class AuctionInfoBean implements Serializable{
             /**
              * id : 37
              * houseId : 63
@@ -760,7 +845,7 @@ public class HouseInfoDetailBean {
             }
         }
 
-        public static class UserInfoBean {
+        public static class UserInfoBean implements Serializable{
             /**
              * id : 30
              * userNo :
@@ -976,7 +1061,7 @@ public class HouseInfoDetailBean {
             }
         }
 
-        public static class HouseCollectionBean {
+        public static class HouseCollectionBean implements Serializable{
             /**
              * id : 118
              * type : 0
@@ -1042,7 +1127,7 @@ public class HouseInfoDetailBean {
             }
         }
 
-        public static class AuctionMeetingBean {
+        public static class AuctionMeetingBean implements Serializable{
             /**
              * id : 1
              * regionId : 1
@@ -1208,7 +1293,7 @@ public class HouseInfoDetailBean {
             }
         }
 
-        public static class HousePhotosBean {
+        public static class HousePhotosBean implements Serializable{
             /**
              * id : 11
              * houseId : 63
@@ -1254,7 +1339,7 @@ public class HouseInfoDetailBean {
             }
         }
 
-        public static class AuctionDepositsBean {
+        public static class AuctionDepositsBean implements Serializable{
             /**
              * id : 2
              * userId : 30

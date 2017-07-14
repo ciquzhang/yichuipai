@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,8 @@ import com.baichao.yichuipai.activity.SettingActivity;
 import com.baichao.yichuipai.core.BaseFragment;
 import com.baichao.yichuipai.databinding.FragMyBinding;
 import com.baichao.yichuipai.fragment.presenter.MyPresenterImpl;
+import com.baichao.yichuipai.fragment.view.MyFragmentView;
+import com.baichao.yichuipai.utils.ACache;
 import com.baichao.yichuipai.utils.Constant;
 import com.baichao.yichuipai.utils.TimeUtils;
 import com.bumptech.glide.Glide;
@@ -27,7 +30,7 @@ import com.bumptech.glide.Glide;
  * Created by pll on 2017/5/4.
  */
 
-public class MyFragment extends BaseFragment{
+public class MyFragment extends BaseFragment implements MyFragmentView {
 
     private FragMyBinding binding;
     private MyPresenterImpl presenter;
@@ -41,12 +44,15 @@ public class MyFragment extends BaseFragment{
     @Override
     protected void initViews(Bundle savedInstanceState) {
         super.initViews(savedInstanceState);
-        presenter = new MyPresenterImpl(mActivity);
+        presenter = new MyPresenterImpl(mActivity,this);
     }
 
     @Override
     protected void initData() {
         super.initData();
+        if(ACache.get(mActivity).getAsString("userId")!=null && ACache.get(mActivity).getAsString("userId").equals("")!=true){
+            presenter.netForMessage(ACache.get(mActivity).getAsString("userId"));
+        }
     }
 
     @Override
@@ -83,7 +89,7 @@ public class MyFragment extends BaseFragment{
             @Override
             public void onClick(View view) {
                 if(TimeUtils.tokenIsPast(mActivity,presenter)){
-                    startActivityForResult(new Intent(mActivity,ApproveByPActivity.class),Constant.REQUEST_APPROVE_P);
+                    presenter.getAuthStatus(ACache.get(mActivity).getAsString("userId"),Constant.AUTH_PERSON);
                 }else{
                     Toast.makeText(mActivity, "请先登录", Toast.LENGTH_SHORT).show();
                     startActivityForResult(new Intent(mActivity,LoginActivity.class), Constant.REQUEST_LOGIN);
@@ -99,7 +105,7 @@ public class MyFragment extends BaseFragment{
             @Override
             public void onClick(View view) {
                 if(TimeUtils.tokenIsPast(mActivity,presenter)){
-                    startActivityForResult(new Intent(mActivity,ApprovebyCActivity.class),Constant.REQUEST_APPROVE_C);
+                    presenter.getAuthStatus(ACache.get(mActivity).getAsString("userId"),Constant.AUTH_COMPANY);
                 }else{
                     Toast.makeText(mActivity, "请先登录", Toast.LENGTH_SHORT).show();
                     startActivityForResult(new Intent(mActivity,LoginActivity.class), Constant.REQUEST_LOGIN);
@@ -127,7 +133,7 @@ public class MyFragment extends BaseFragment{
         binding.fragMySafe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+
             }
         });
 
@@ -147,12 +153,7 @@ public class MyFragment extends BaseFragment{
         super.onActivityResult(requestCode, resultCode, data);
         switch (resultCode){
             case Constant.RESULT_LOGIN:
-                if(data.getStringExtra("login_name")!=null && data.getStringExtra("login_name").equals("")!=true){
-                    binding.fragMyName.setText(data.getStringExtra("login_name"));
-                }
-                if(data.getStringExtra("login_image")!=null && data.getStringExtra("login_image").equals("")!=true){
-                    Glide.with(mActivity).load(data.getStringExtra("login_image")).into(binding.fragMyImg);
-                }
+                presenter.netForMessage(ACache.get(mActivity).getAsString("userId"));
                 break;
 
             case Constant.RESULT_SETTING:
@@ -163,5 +164,55 @@ public class MyFragment extends BaseFragment{
                 binding.fragMyTvApproveCompany.setText("未认证");
                 break;
         }
+    }
+
+    @Override
+    public void showToast(String msg) {
+        Toast.makeText(mActivity, msg, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void isAuth(String isAuth,int type) {
+        if(type == Constant.AUTH_PERSON){
+            if(isAuth.equals("1")){
+                showToast("请勿重复认证");
+            }else if(isAuth.equals("2")){
+                showToast("认证审核中,请耐心等待");
+            }else{
+                startActivityForResult(new Intent(mActivity,ApproveByPActivity.class),Constant.REQUEST_APPROVE_P);
+            }
+        }else{
+            if(isAuth.equals("1")){
+                showToast("请勿重复认证");
+            }else if(isAuth.equals("2")){
+                showToast("认证审核中,请耐心等待");
+            }else{
+                startActivityForResult(new Intent(mActivity,ApprovebyCActivity.class),Constant.REQUEST_APPROVE_C);
+            }
+        }
+    }
+
+    @Override
+    public void setUserMessage(String personStatus, String companyStatus, String name, String headImg) {
+        //个人
+        if(personStatus.equals("0")){
+            binding.fragMyTvApprovePerson.setText("未认证");
+        }else if(personStatus.equals("1")){
+            binding.fragMyTvApprovePerson.setText("已认证");
+        }else if(personStatus.equals("2")){
+            binding.fragMyTvApprovePerson.setText("审核中");
+        }
+        //企业
+        if(companyStatus.equals("0")){
+            binding.fragMyTvApproveCompany.setText("未认证");
+        }else if(companyStatus.equals("1")){
+            binding.fragMyTvApproveCompany.setText("已认证");
+        }else if(companyStatus.equals("2")){
+            binding.fragMyTvApproveCompany.setText("审核中");
+        }
+        //姓名
+        Log.e("TAG", "--name--" + name);
+        binding.fragMyName.setText(name);
+        Glide.with(mActivity).load(Constant.APP_IMAGE + headImg).error(R.drawable.user_icon).into(binding.fragMyImg);
     }
 }

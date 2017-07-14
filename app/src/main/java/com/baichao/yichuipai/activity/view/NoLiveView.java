@@ -7,6 +7,6 @@ import com.baichao.yichuipai.activity.module.HouseInfoDetailBean;
  */
 
 public interface NoLiveView {
-    void netSuccess(HouseInfoDetailBean.DataBean dataBean, String houseId, String auctionId);
     void showToast(String msg);
+    void netForItemsSuccess(HouseInfoDetailBean.DataBean dataBean, String houseId, String auctionId);
 }

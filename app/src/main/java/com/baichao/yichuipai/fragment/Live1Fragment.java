@@ -6,6 +6,9 @@ import android.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,12 +26,10 @@ import com.baichao.yichuipai.core.BaseFragment;
 import com.baichao.yichuipai.databinding.FragLive1Binding;
 import com.baichao.yichuipai.fragment.presenter.LiveFragPresenter;
 import com.baichao.yichuipai.fragment.presenter.LiveFragPresenterImpl;
-import com.baichao.yichuipai.fragment.presenter.MyPresenterImpl;
 import com.baichao.yichuipai.fragment.view.LiveFragView;
 import com.baichao.yichuipai.utils.ACache;
 import com.baichao.yichuipai.utils.Constant;
 import com.baichao.yichuipai.utils.DateUtil;
-import com.baichao.yichuipai.utils.TimeUtils;
 import com.jakewharton.rxbinding.view.RxView;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
@@ -116,8 +117,13 @@ public class Live1Fragment extends BaseFragment implements LiveFragView{
     }
 
     private void viewSetting() {
-        binding.liveTitle.setText(data.getHouseInfo().getTitle());//标题
-        binding.liveSignUpCount.setText(data.getAuctionInfo().getBidCount()+"人报名");//报名人数
+        //设置标题
+        ForegroundColorSpan span = new ForegroundColorSpan(Color.parseColor("#00b589"));
+        SpannableStringBuilder builder = new SpannableStringBuilder("[" + data.getAuctionMeeting().getName() + "]" + data.getHouseInfo().getTitle());
+        builder.setSpan(span, 0, data.getAuctionMeeting().getName().length()+2, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        binding.liveTitle.setText(builder);
+
+        binding.liveSignUpCount.setText(data.getAuctionMeeting().getSignCount()+"人报名");//报名人数
         binding.liveClock.setText(data.getAuctionInfo().getCollectionCount()+"人设置提醒");//设置提醒人数
         binding.liveLookCount.setText(data.getHouseInfo().getPv()+"次围观");//围观人数
         binding.liveIncreasePrice.setText(data.getAuctionInfo().getIncreasePrice() + "");//加价幅度
@@ -125,18 +131,30 @@ public class Live1Fragment extends BaseFragment implements LiveFragView{
         binding.liveStartPrice.setText(data.getAuctionInfo().getStartPrice()+"");//起拍价
         binding.liveShopType.setText(data.getAuctionInfo().getType());//类型
         binding.liveSellPeriod.setText(data.getAuctionInfo().getSellPeriod());//变卖周期
-        binding.liveSignUpEnd.setText(DateUtil.getDateToString(data.getAuctionInfo().getSignEndTime()));//报名截止
-        binding.liveSeeHouse.setText(DateUtil.getDateToString(data.getHouseInfo().getSeeStartTime()));//看房时间
-        binding.liveAuctionStartTime.setText(DateUtil.getDateToString(data.getAuctionInfo().getAuctionStartTime()));//拍卖时间
+        if(data.getAuctionMeeting().getSignEndTime() == 0){
+            binding.liveSignUpEnd.setText("-");//报名截止
+        }else{
+            binding.liveSignUpEnd.setText(DateUtil.getDateToShortString(data.getAuctionMeeting().getSignEndTime()));//报名截止
+        }
+        if(data.getHouseInfo().getSeeStartTime() == 0){
+            binding.liveSeeHouse.setText("-");//看房时间
+        }else{
+            binding.liveSeeHouse.setText(DateUtil.getDateToString(data.getHouseInfo().getSeeStartTime()));//看房时间
+        }
+        if(data.getAuctionInfo().getSignStartTime() == 0){
+            binding.liveAuctionStartTime.setText("-");//拍卖时间
+        }else{
+            binding.liveAuctionStartTime.setText(DateUtil.getDateToString(data.getAuctionInfo().getAuctionStartTime()));//拍卖时间
+        }
         binding.liveRule.setText(data.getAuctionInfo().getBidRule()+"");//竞价规则
         binding.liveConsultWay.setText(data.getAuctionInfo().getConsultWay());//咨询方式
         binding.liveHouseAddress.setText(data.getHouseInfo().getLocation());//房产地址
         switch (live_buy) {
             case 0 :
-                Log.e("TAG", "--error_live--");
+                Log.e("TAG", "--error_live1--");
                 break;
             case 1:
-                Log.e("TAG", "--拍卖--");
+                //拍卖
                 binding.liveCommit.setText("出价");
                 binding.livePrice.setText(data.getAuctionInfo().getCurrentPrice() + "");//当前价
                 btn_type = "1";
@@ -205,8 +223,6 @@ public class Live1Fragment extends BaseFragment implements LiveFragView{
                             showToast("请先登录");
                             return;
                         }
-                        //token是否过期处理
-                        TimeUtils.tokenIsPast(mActivity,new MyPresenterImpl(mActivity));
                         binding.liveCollectionCommit.setClickable(false);
                         if(isCollection){
                             //取消收藏
@@ -248,6 +264,7 @@ public class Live1Fragment extends BaseFragment implements LiveFragView{
                         showToast("此拍卖您还没有报名");
                         return;
                     }
+                    Log.e("TAG", "--出价--");
                     Intent intent = new Intent(mActivity,OfferActivity.class);
                     intent.putExtra("title",data.getHouseInfo().getTitle());
                     intent.putExtra("currentPrice",data.getAuctionInfo().getCurrentPrice() + "");
@@ -294,6 +311,7 @@ public class Live1Fragment extends BaseFragment implements LiveFragView{
 
     @Override
     public void collectSuccess() {
+
         binding.liveCollectionCommit.setClickable(true);
         binding.liveCollectionImg.setImageResource(R.mipmap.icon_remind_o);
         binding.liveIsCollection.setText("已收藏");
@@ -324,5 +342,10 @@ public class Live1Fragment extends BaseFragment implements LiveFragView{
         if(resultCode == Constant.RESULT_LOGIN){
             presenter.netForNewData(houseId,auctionId);
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
     }
 }

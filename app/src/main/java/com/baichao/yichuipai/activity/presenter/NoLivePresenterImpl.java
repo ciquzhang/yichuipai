@@ -29,12 +29,11 @@ public class NoLivePresenterImpl implements NoLivePresenter {
     }
 
     @Override
-    public void netForData(final String houseId, final String auctionId) {
-        //判断是否为登录状态
+    public void netForItemList(final String houseId, final String auctionId) {
         NetService netService = RetrofitUtils.getRetrofit(Constant.NET_HOUSE,context).create(NetService.class);
-        if(ACache.get(context).getAsString("userId")!=null &&
-                ACache.get(context).getAsString("userId").equals("")!=true){
-            //为登录状态
+        //判断是否为登录状态
+        if(ACache.get(context).getAsString("userId")!=null && ACache.get(context).getAsString("userId").equals("")!=true){
+            //登录
             netService.getHouseInfoDetail(ACache.get(context).getAsString("userId"),houseId,auctionId)
                     .subscribeOn(Schedulers.newThread())
                     .unsubscribeOn(Schedulers.newThread())
@@ -48,21 +47,19 @@ public class NoLivePresenterImpl implements NoLivePresenter {
                         @Override
                         public void onError(Throwable e) {
                             Log.e("TAG", "nolive:" + e.getMessage());
-                            noLiveView.showToast("获取数据错误,可能是网络原因");
                         }
 
                         @Override
                         public void onNext(HouseInfoDetailBean houseInfoDetailBean) {
                             if(houseInfoDetailBean.getCode().equals("1")){
-                                noLiveView.netSuccess(houseInfoDetailBean.getData(),houseId,auctionId);
+                                noLiveView.netForItemsSuccess(houseInfoDetailBean.getData(),houseId,auctionId);
                             }else{
                                 noLiveView.showToast(houseInfoDetailBean.getMsg());
                             }
                         }
                     });
-
         }else{
-            //非登录状态
+            //未登录
             netService.getHouseInfoDetail(houseId,auctionId)
                     .subscribeOn(Schedulers.newThread())
                     .unsubscribeOn(Schedulers.newThread())
@@ -76,13 +73,12 @@ public class NoLivePresenterImpl implements NoLivePresenter {
                         @Override
                         public void onError(Throwable e) {
                             Log.e("TAG", "nolive:" + e.getMessage());
-                            noLiveView.showToast("获取数据错误,可能是网络原因");
                         }
 
                         @Override
                         public void onNext(HouseInfoDetailBean houseInfoDetailBean) {
                             if(houseInfoDetailBean.getCode().equals("1")){
-                                noLiveView.netSuccess(houseInfoDetailBean.getData(),houseId,auctionId);
+                                noLiveView.netForItemsSuccess(houseInfoDetailBean.getData(),houseId,auctionId);
                             }else{
                                 noLiveView.showToast(houseInfoDetailBean.getMsg());
                             }

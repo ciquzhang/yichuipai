@@ -43,8 +43,8 @@
                 android:id="@+id/home_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="俊发盛唐城3栋1008号房屋"
-                android:textColor="#333333"
+                android:text="房屋title"
+                android:textColor="#151515"
                 android:paddingTop="8px"
                 android:textSize="28px"/>
 
@@ -67,7 +67,6 @@
                 android:id="@+id/home_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="958万"
                 android:textColor="#f46a2d"
                 android:textSize="48px"
                 android:gravity="center_vertical"

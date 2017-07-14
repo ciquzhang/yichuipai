@@ -2,6 +2,9 @@ package com.baichao.yichuipai.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -56,26 +59,25 @@ public class TakenHolder extends BaseViewHolder<TakenListBean.DataBean.PageDataB
         taken_id.setText("[竞买号 " + data.getAuctionRecord().getBidNo() + "]");
         //未支付或者已支付
         if(data.getAuctionResult().getTranStatus() == 1){
-            taken_pay.setText("交易中");
+            taken_pay.setText("未支付");
         }else if(data.getAuctionResult().getTranStatus() == 2){
             taken_pay.setText("交易成功");
             taken_pay.setTextColor(Color.parseColor("#00B589"));
-            taken_look.setText("查看拍卖确认书");
-            taken_look.setBackgroundResource(R.drawable.taken_btn_shape_1);
+        }else if(data.getAuctionResult().getTranStatus() == 3){
+            taken_pay.setText("支付失败");
         }
         //标题
-        taken_title.setText("[" + data.getAuctionMeeting().getName() + "]" + data.getHouseInfo().getTitle());
-        if(data.getAuctionInfo().getAuctionStatus()==2){
-            taken_price_type.setText("当前价");
-            taken_price.setText(Utils.nullToString(data.getAuctionInfo().getCurrentPrice()));
-        }else{
-            taken_price_type.setText("评估价");
-            taken_price.setText(Utils.nullToString(data.getHouseInfo().getEvalautePrice()));
-        }
+        ForegroundColorSpan span = new ForegroundColorSpan(Color.parseColor("#00b589"));
+        SpannableStringBuilder builder = new SpannableStringBuilder("[" + data.getAuctionMeeting().getName() + "]" + data.getHouseInfo().getTitle());
+        builder.setSpan(span, 0, data.getAuctionMeeting().getName().length()+2, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        taken_title.setText(builder);
+
+        //成交价
+        taken_price.setText(Utils.nullToString(data.getAuctionInfo().getCurrentPrice()));
         //报名
-        taken_sign_up_count.setText(data.getAuctionInfo().getBidCount()+"人报名");
-        //提醒人数
-        taken_price_count.setText(data.getAuctionInfo().getCollectionCount()+"人设置提醒");
+        taken_sign_up_count.setText(data.getAuctionMeeting().getSignCount()+"人报名");
+        //出价
+        taken_price_count.setText(data.getCountRecord()+"人出价");
         //围观
         taken_look_count.setText(data.getHouseInfo().getPv()+"次围观");
         taken_look.setOnClickListener(new View.OnClickListener() {

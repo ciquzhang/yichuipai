@@ -30,7 +30,7 @@ public class TabContainerView extends RelativeLayout {
     /**
      *  中间ViewPager
      */
-    private MyViewPager contentViewPager;
+    private NoCacheViewPager contentViewPager;
 
     /**
      *  文本属性
@@ -103,8 +103,8 @@ public class TabContainerView extends RelativeLayout {
     }
 
     private void initViewPager(Context context) {
-        contentViewPager = new MyViewPager(context);
-        contentViewPager.setOffscreenPageLimit(3);//设置缓存三个界面
+        contentViewPager = new NoCacheViewPager(context);
+//        contentViewPager.setOffscreenPageLimit(2);//设置缓存三个界面
         LayoutParams contentVpLp = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         contentVpLp.addRule(RelativeLayout.ABOVE, R.id.divide_tab);
         contentViewPager.setLayoutParams(contentVpLp);
@@ -113,6 +113,7 @@ public class TabContainerView extends RelativeLayout {
         contentViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
             }
 
             @Override
@@ -153,6 +154,4 @@ public class TabContainerView extends RelativeLayout {
     public void setOnTabSelectedListener(OnTabSelectedListener onTabSelectedListener) {
         this.onTabSelectedListener = onTabSelectedListener;
     }
-
-
 }

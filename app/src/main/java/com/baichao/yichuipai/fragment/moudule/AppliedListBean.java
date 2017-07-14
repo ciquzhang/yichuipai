@@ -388,6 +388,24 @@ public class AppliedListBean {
                  * countRecord : 0
                  */
                 private String name;
+                private int signCount;
+                private int signStatus;
+
+                public int getSignStatus() {
+                    return signStatus;
+                }
+
+                public void setSignStatus(int signStatus) {
+                    this.signStatus = signStatus;
+                }
+
+                public int getSignCount() {
+                    return signCount;
+                }
+
+                public void setSignCount(int signCount) {
+                    this.signCount = signCount;
+                }
 
                 public String getName() {
                     return name;

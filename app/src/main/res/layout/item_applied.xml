@@ -11,7 +11,6 @@
             android:id="@+id/applied_type"
             android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:text="已结束"
             android:gravity="center"
             android:textColor="#ffffff"
             android:background="@drawable/collection_shape"
@@ -20,20 +19,23 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="center"
+            android:gravity="right"
             android:layout_marginLeft="5dp"
             android:textSize="12dp"
             android:textColor="#999999"
+            android:visibility="gone"
             android:text="距离 13分45秒 开始看房"/>
 
         <TextView
             android:id="@+id/applied_id"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:textSize="14dp"
             android:textColor="#999999"
-            android:text="竞买号 ZD4154"
-            android:gravity="center"/>
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="right"
+            android:text="竞买号 ZD4154"/>
     </LinearLayout>
 
     <LinearLayout

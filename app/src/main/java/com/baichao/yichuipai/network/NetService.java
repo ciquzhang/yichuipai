@@ -15,11 +15,13 @@ import com.baichao.yichuipai.activity.module.RegisterBean;
 import com.baichao.yichuipai.activity.module.RegisterCodeBean;
 import com.baichao.yichuipai.activity.module.SignBean;
 import com.baichao.yichuipai.fragment.moudule.AppliedListBean;
+import com.baichao.yichuipai.fragment.moudule.AuthStatusBean;
 import com.baichao.yichuipai.fragment.moudule.CollectionBean;
 import com.baichao.yichuipai.fragment.moudule.CollectionListBean;
 import com.baichao.yichuipai.fragment.moudule.HomeBean;
 import com.baichao.yichuipai.fragment.moudule.RefreshTokenBean;
 import com.baichao.yichuipai.fragment.moudule.TakenListBean;
+import com.baichao.yichuipai.fragment.moudule.UserMessageBean;
 
 import java.util.Map;
 
@@ -345,6 +347,23 @@ public interface NetService {
 
     @POST("getAuctionResultList")
     Observable<PassAuctionListBean> getPassList(@Query("auctionId") String auctionId);
+
+
+    /**
+     * 获取认证状态
+     * @param userId
+     * @return
+     */
+    @POST("authStatus")
+    Observable<AuthStatusBean> getAuthStatus(@Query("userId") String userId);
+
+    /**
+     * 获取用户信息
+     * @param userId
+     * @return
+     */
+    @POST("getUserInfo")
+    Observable<UserMessageBean> getUserMessage(@Query("userId") String userId);
 }
 
 

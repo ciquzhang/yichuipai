@@ -61,8 +61,6 @@ public class LoginPresenterImpl implements LoginPresenter{
                                 ACache.get(context).put("token_past_time",loginBean.getData().getUserToken().getExpire_time());
                                 ACache.get(context).put("userId",loginBean.getData().getId()+"");
                                 Intent intent = new Intent();
-                                intent.putExtra("login_image",loginBean.getData().getHeadImg());
-                                intent.putExtra("login_name",loginBean.getData().getNickname());
                                 Log.e("TAG", "userId" + loginBean.getData().getId());
                                 loginView.loginSuccessful(intent);
                             }else{

@@ -1,5 +1,6 @@
 package com.baichao.yichuipai.activity;
 
+import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
@@ -16,6 +17,8 @@ import com.baichao.yichuipai.utils.Constant;
 public class LoginActivity extends BaseActivity implements LoginView {
     private ActivityLoginBinding binding;
     private LoginPresenterImpl presenter;
+    //广播
+    private BroadcastReceiver mBroadcastReceiver;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -92,7 +95,22 @@ public class LoginActivity extends BaseActivity implements LoginView {
 
     @Override
     public void loginSuccessful(Intent intent) {
+//        //发送广播
+//        mBroadcastReceiver = MyFragment.getMyFragmentReceiver();
+//        IntentFilter intentFilter = new IntentFilter();
+//        intentFilter.addAction(Constant.ACTION_NAME);
+//        registerReceiver(mBroadcastReceiver, intentFilter);
+//        Intent bor = new Intent();
+//        bor.putExtra("userId", ACache.get(mContext).getAsString("userId"));
+//        Log.e("TAG", "--注册广播--");
+//        sendBroadcast(bor);
         setResult(Constant.RESULT_LOGIN,intent);
         finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+//        unregisterReceiver(mBroadcastReceiver);
     }
 }

@@ -5,6 +5,7 @@ import android.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -102,6 +103,7 @@ public class AuctionListFragment extends BaseFragment implements AuctionListView
     @Override
     protected void initData() {
         super.initData();
+        Log.e("TAG", "--111111--");
         ArrayList<Fragment> list = new ArrayList<>();
         list.add(new AuCollectFragment());
         list.add(new AuAppliedFragment());

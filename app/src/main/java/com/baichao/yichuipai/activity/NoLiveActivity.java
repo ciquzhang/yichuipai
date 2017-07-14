@@ -36,8 +36,7 @@ public class NoLiveActivity extends BaseActivity implements NoLiveView {
         presenter = new NoLivePresenterImpl(mContext,this);
     }
 
-    private void tabSetting(HouseInfoDetailBean.DataBean dataBean,String houseId,String auctionId) {
-        int live_type = getIntent().getIntExtra("live_type", 0);
+    private void tabSetting(HouseInfoDetailBean.DataBean dataBean,String houseId,String auctionId,int live_type) {
         ArrayList<String> titles = new ArrayList<>();
         titles.add("基本信息");
         titles.add("图文信息");
@@ -70,8 +69,9 @@ public class NoLiveActivity extends BaseActivity implements NoLiveView {
     @Override
     protected void initData() {
         super.initData();
-        presenter.netForData(getIntent().getIntExtra("houseId",0)+"",
-                getIntent().getIntExtra("auctionId" , 0)+"");
+//        Log.e("TAG", "--houseId--" + getIntent().getStringExtra("houseId"));
+//        Log.e("TAG", "--auctionId--" + getIntent().getStringExtra("auctionId"));
+        presenter.netForItemList(getIntent().getStringExtra("houseId"),getIntent().getStringExtra("auctionId"));
     }
 
     @Override
@@ -80,12 +80,29 @@ public class NoLiveActivity extends BaseActivity implements NoLiveView {
     }
 
     @Override
-    public void netSuccess(HouseInfoDetailBean.DataBean dataBean,String houseId,String auctionId) {
-        tabSetting(dataBean,houseId,auctionId);//基本设置
+    public void showToast(String msg) {
+        Toast.makeText(NoLiveActivity.this, msg, Toast.LENGTH_SHORT).show();
     }
 
     @Override
-    public void showToast(String msg) {
-        Toast.makeText(NoLiveActivity.this, msg, Toast.LENGTH_SHORT).show();
+    public void netForItemsSuccess(HouseInfoDetailBean.DataBean dataBean, String houseId, String auctionId) {
+        //未直播
+        int live_type = 0;
+        if(dataBean.getAuctionMeeting().getSignStatus() == 2 && dataBean.getAuctionInfo().getAuctionStatus() == 2){
+            //拍卖
+            live_type = 1;
+        }else if(dataBean.getAuctionMeeting().getSignStatus() == 1 && dataBean.getAuctionInfo().getAuctionStatus() == 0){
+            //可报名
+            live_type = 4;
+        }else if(dataBean.getAuctionMeeting().getSignStatus() == 0 && dataBean.getAuctionInfo().getAuctionStatus() == 0){
+            //不可报名
+            live_type = 5;
+        }else if(dataBean.getAuctionMeeting().getSignStatus() == 2 && dataBean.getAuctionInfo().getAuctionStatus() == 0){
+            //报名结束
+            live_type = 5;
+        }else if(dataBean.getAuctionInfo().getAuctionStatus() == 3 || dataBean.getAuctionInfo().getAuctionStatus() == 4){
+            live_type = 5;
+        }
+        tabSetting(dataBean,houseId,auctionId,live_type);
     }
 }

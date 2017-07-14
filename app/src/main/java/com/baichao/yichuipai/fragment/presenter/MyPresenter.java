@@ -6,4 +6,6 @@ package com.baichao.yichuipai.fragment.presenter;
 
 public interface MyPresenter {
     void refreshToken(String token);
+    void getAuthStatus(String userId,int authType);
+    void netForMessage(String userId);
 }

@@ -1,6 +1,11 @@
 package com.baichao.yichuipai.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -52,46 +57,62 @@ public class AppliedHolder extends BaseViewHolder<AppliedListBean.DataBean.PageD
     @Override
     public void setData(AppliedListBean.DataBean.PageDataBean.HouseAndSignRecordBean data) {
         super.setData(data);
-        if(data.getAuctionInfo().getAuctionStatus() == 2 && data.getAuctionInfo().getLiveStatus() == 1 &&
-                data.getAuctionInfo().getSignStatus() == 0 && data.getHouseInfo().getSeeHouseStatus()==0){
+        if(data.getAuctionInfo().getAuctionStatus() == 2 &&
+                data.getSignStatus() == 2 &&
+                data.getHouseInfo().getSeeHouseStatus()==0){
             //拍卖中
             applied_type.setText("拍卖中");
             applied_type.setBackgroundResource(R.drawable.collection_shape_1);
-        }else if(data.getAuctionInfo().getAuctionStatus() == 0 && data.getAuctionInfo().getLiveStatus() == 0 &&
-                data.getAuctionInfo().getSignStatus() == 0 && data.getHouseInfo().getSeeHouseStatus()==0){
-            //无状态
-            applied_type.setText("已结束");
-        }else if(data.getAuctionInfo().getAuctionStatus() == 0 && data.getAuctionInfo().getLiveStatus() == 0 &&
-                data.getAuctionInfo().getSignStatus() == 1 && data.getHouseInfo().getSeeHouseStatus()==0){
+            applied_price_type.setText("当前价");
+            applied_price.setText(Utils.nullToString(data.getAuctionInfo().getCurrentPrice()));
+        }else if(data.getAuctionInfo().getAuctionStatus() == 0 &&
+                data.getSignStatus() == 1 &&
+                data.getHouseInfo().getSeeHouseStatus()==0){
             //报名中
             applied_type.setText("报名中");
             applied_type.setBackgroundResource(R.drawable.collection_shape_2);
-        }else if(data.getAuctionInfo().getSignStatus() == 1 && data.getAuctionInfo().getAuctionStatus() == 0 &&
-                data.getAuctionInfo().getLiveStatus() == 1 && data.getHouseInfo().getSeeHouseStatus() == 1){
+            applied_price_type.setText("起拍价");
+            applied_price.setText(Utils.nullToString(data.getAuctionInfo().getStartPrice()));
+        }else if(data.getAuctionInfo().getAuctionStatus() == 0 && data.getHouseInfo().getSeeHouseStatus() == 1){
             //看房中
             applied_type.setText("看房中");
             applied_type.setBackgroundResource(R.drawable.collection_shape_3);
-        }else if(data.getAuctionInfo().getSignStatus() == 0 && data.getAuctionInfo().getAuctionStatus() == 0 &&
-                data.getAuctionInfo().getLiveStatus() == 1 && data.getHouseInfo().getSeeHouseStatus() == 1){
-            //看房中
-            applied_type.setText("看房中");
+            applied_price_type.setText("起拍价");
+            applied_price.setText(Utils.nullToString(data.getAuctionInfo().getStartPrice()));
+        }else if(data.getSignStatus() == 2 &&
+                data.getAuctionInfo().getAuctionStatus() == 0 &&
+                data.getHouseInfo().getSeeHouseStatus() == 0){
+            //报名结束
+            applied_type.setText("报名结束");
             applied_type.setBackgroundResource(R.drawable.collection_shape_3);
-        }
-        if(data.getAuctionInfo().getAuctionStatus()==2){
-            applied_price_type.setText("当前价");
+            applied_price_type.setText("起拍价");
+            applied_price.setText(Utils.nullToString(data.getAuctionInfo().getStartPrice()));
+        }else if(data.getAuctionInfo().getAuctionStatus() == 0 &&
+                data.getSignStatus() == 0 &&
+                data.getHouseInfo().getSeeHouseStatus()==0){
+            //无状态
+            Log.e("TAG", "--1111--");
+            applied_type.setVisibility(View.GONE);
+            applied_price_type.setText("起拍价");
+            applied_price.setText(Utils.nullToString(data.getAuctionInfo().getStartPrice()));
+        }else if(data.getAuctionInfo().getAuctionStatus() == 3 || data.getAuctionInfo().getAuctionStatus() == 4){
+            applied_type.setText("已结束");
+            applied_type.setBackgroundResource(R.drawable.collection_shape);
+            applied_price_type.setText("成交价");
             applied_price.setText(Utils.nullToString(data.getAuctionInfo().getCurrentPrice()));
-        }else{
-            applied_price_type.setText("评估价");
-            applied_price.setText(Utils.nullToString(data.getHouseInfo().getEvalautePrice()));
         }
+
         //竞买号
         applied_id.setText("竞买号[" + data.getAuctionSignRecord().getBidNo() + "]");
         //标题
-        applied_title.setText("[" + data.getName() + "]" + data.getHouseInfo().getTitle());
+        ForegroundColorSpan span = new ForegroundColorSpan(Color.parseColor("#00b589"));
+        SpannableStringBuilder builder = new SpannableStringBuilder("[" + data.getName() + "]" + data.getHouseInfo().getTitle());
+        builder.setSpan(span, 0, data.getName().length()+2, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        applied_title.setText(builder);
         //报名
-        applied_sign_up_count.setText(data.getAuctionInfo().getBidCount()+"人报名");
-        //提醒人数
-        applied_price_count.setText(data.getAuctionInfo().getCollectionCount()+"人设置提醒");
+        applied_sign_up_count.setText(data.getSignCount()+"人报名");
+        //出价人数
+        applied_price_count.setText(data.getCountRecord()+"人出价");
         //围观
         applied_look_count.setText(data.getHouseInfo().getPv()+"次围观");
         //icon

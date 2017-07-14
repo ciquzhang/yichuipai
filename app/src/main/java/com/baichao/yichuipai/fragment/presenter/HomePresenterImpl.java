@@ -3,9 +3,11 @@ package com.baichao.yichuipai.fragment.presenter;
 import android.content.Context;
 import android.util.Log;
 
+import com.baichao.yichuipai.activity.module.HouseInfoDetailBean;
 import com.baichao.yichuipai.fragment.moudule.HomeBean;
 import com.baichao.yichuipai.fragment.view.HomeView;
 import com.baichao.yichuipai.network.NetService;
+import com.baichao.yichuipai.utils.ACache;
 import com.baichao.yichuipai.utils.Constant;
 import com.baichao.yichuipai.utils.RetrofitUtils;
 import com.my.view.CarouselFigureView;
@@ -114,5 +116,64 @@ public class HomePresenterImpl implements HomePresenter{
         url.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1493894303238&di=dd600d8eda014ed5ecf041a6b7261090&imgtype=0&src=http%3A%2F%2Fimg1.3lian.com%2F2015%2Fa1%2F92%2Fd%2F173.jpg");
         url.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1493894322211&di=dcf32b088e93c110479022917b287fb8&imgtype=0&src=http%3A%2F%2Fwww.qqpk.cn%2FArticle%2FUploadFiles%2F201411%2F20141116135722282.jpg");
         carouselFigureView.setURL(url);
+    }
+
+    @Override
+    public void netForItemList(final String houseId, final String auctionId) {
+        NetService netService = RetrofitUtils.getRetrofit(Constant.NET_HOUSE,context).create(NetService.class);
+        //判断是否为登录状态
+        if(ACache.get(context).getAsString("userId")!=null && ACache.get(context).getAsString("userId").equals("")!=true){
+            //登录
+            netService.getHouseInfoDetail(ACache.get(context).getAsString("userId"),houseId,auctionId)
+                    .subscribeOn(Schedulers.newThread())
+                    .unsubscribeOn(Schedulers.newThread())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(new Subscriber<HouseInfoDetailBean>() {
+                        @Override
+                        public void onCompleted() {
+
+                        }
+
+                        @Override
+                        public void onError(Throwable e) {
+                            Log.e("TAG", "nolive:" + e.getMessage());
+                        }
+
+                        @Override
+                        public void onNext(HouseInfoDetailBean houseInfoDetailBean) {
+                            if(houseInfoDetailBean.getCode().equals("1")){
+                                homeView.netForItemsSuccess(houseInfoDetailBean.getData(),houseId,auctionId);
+                            }else{
+                                homeView.showToast(houseInfoDetailBean.getMsg());
+                            }
+                        }
+                    });
+        }else{
+            //未登录
+            netService.getHouseInfoDetail(houseId,auctionId)
+                    .subscribeOn(Schedulers.newThread())
+                    .unsubscribeOn(Schedulers.newThread())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(new Subscriber<HouseInfoDetailBean>() {
+                        @Override
+                        public void onCompleted() {
+
+                        }
+
+                        @Override
+                        public void onError(Throwable e) {
+                            Log.e("TAG", "nolive:" + e.getMessage());
+                        }
+
+                        @Override
+                        public void onNext(HouseInfoDetailBean houseInfoDetailBean) {
+                            if(houseInfoDetailBean.getCode().equals("1")){
+                                homeView.netForItemsSuccess(houseInfoDetailBean.getData(),houseId,auctionId);
+                            }else{
+                                homeView.showToast(houseInfoDetailBean.getMsg());
+                            }
+                        }
+                    });
+        }
     }
 }

@@ -1,6 +1,10 @@
 package com.baichao.yichuipai.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -61,7 +65,11 @@ public class PassAuctionHolder extends BaseViewHolder<PassAuctionListBean.DataBe
             //成交价
             pass_auction_price.setText("￥ " + data.getAuctionResult().getPrice());
             //成交时间
-            pass_auction_time.setText(DateUtil.getDateToString(data.getAuctionResult().getCreateTime()));
+            if(data.getAuctionResult().getCreateTime() == 0){
+                pass_auction_time.setText("成交时间  --");
+            }else{
+                pass_auction_time.setText("成交时间 " + DateUtil.getDateToString(data.getAuctionResult().getCreateTime()));
+            }
         }else if(data.getAuctionResult().getTranStatus() == 2){
             //交易完成
             pass_auction_type.setText("成功交易");
@@ -71,7 +79,11 @@ public class PassAuctionHolder extends BaseViewHolder<PassAuctionListBean.DataBe
             //成交价
             pass_auction_price.setText("￥ " + data.getAuctionResult().getPrice());
             //成交时间
-            pass_auction_time.setText(DateUtil.getDateToString(data.getAuctionResult().getCreateTime()));
+            if(data.getAuctionResult().getCreateTime() == 0){
+                pass_auction_time.setText("成交时间  --");
+            }else{
+                pass_auction_time.setText("成交时间 " + DateUtil.getDateToString(data.getAuctionResult().getCreateTime()));
+            }
         }else if(data.getAuctionResult().getTranStatus() == 3){
             //交易终止
             pass_auction_type.setText("交易失败");
@@ -81,14 +93,22 @@ public class PassAuctionHolder extends BaseViewHolder<PassAuctionListBean.DataBe
             //成交价
             pass_auction_price.setText("￥ " + data.getAuctionResult().getPrice());
             //成交时间
-            pass_auction_time.setText(DateUtil.getDateToString(data.getAuctionResult().getCreateTime()));
+            if(data.getAuctionResult().getCreateTime() == 0){
+                pass_auction_time.setText("成交时间  --");
+            }else{
+                pass_auction_time.setText("成交时间 " + DateUtil.getDateToString(data.getAuctionResult().getCreateTime()));
+            }
         }
         //标题
-        applied_title.setText("[" + data.getAuctionMeeting().getName() + "]" + data.getHouseInfo().getTitle());
+        ForegroundColorSpan span = new ForegroundColorSpan(Color.parseColor("#00b589"));
+        SpannableStringBuilder builder = new SpannableStringBuilder("[" + data.getAuctionMeeting().getName() + "]" + data.getHouseInfo().getTitle());
+        builder.setSpan(span, 0, data.getAuctionMeeting().getName().length()+2, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        applied_title.setText(builder);
+
         //报名
-        pass_sign_up_count.setText(data.getAuctionInfo().getBidCount()+"人报名");
-        //提醒人数
-        pass_price_count.setText(data.getAuctionInfo().getCollectionCount()+"人设置提醒");
+        pass_sign_up_count.setText(data.getAuctionMeeting().getSignCount()+"人报名");
+        //出价人数
+        pass_price_count.setText(data.getCountRecord()+"人出价");
         //围观
         pass_look_count.setText(data.getHouseInfo().getPv()+"次围观");
     }

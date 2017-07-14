@@ -29,7 +29,8 @@
         <com.baichao.yichuipai.view.NoScrollViewPager
             android:id="@+id/live_vp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
 
         </com.baichao.yichuipai.view.NoScrollViewPager>
     </LinearLayout>
