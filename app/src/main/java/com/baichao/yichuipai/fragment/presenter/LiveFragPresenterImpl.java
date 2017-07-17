@@ -105,8 +105,7 @@ public class LiveFragPresenterImpl implements LiveFragPresenter{
 
                     @Override
                     public void onError(Throwable e) {
-                        Log.e("TAG", "nolive:" + e.getMessage());
-                        liveFragView.showToast("获取数据错误,可能是网络原因");
+                        Log.e("TAG", "LiveFragPresenterImpl:" + e.getMessage());
                     }
 
                     @Override

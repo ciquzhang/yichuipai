@@ -86,6 +86,9 @@ public class PassAuctionActivity extends BaseActivity implements PassAuctionView
         adapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
+                //调用房屋点击量
+                presenter.addPv(mData.get(position).getHouseInfo().getId()+"");
+
                 //判断该进入直播还是非直播
                 if(mData.get(position).getAuctionInfo().getLiveStatus() == 1){
                     //直播

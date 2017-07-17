@@ -48,15 +48,21 @@ public class HomeFragment extends BaseFragment implements HomeView,
     private RecyclerArrayAdapter<HomeBean.DataBean.PageDataBean> adapter;
     private Handler handler = new Handler();
     private int num = 1;
+    /**
+     * 是否创建
+     */
+    protected boolean isCreate = false;
 
     @Override
     protected View loadContentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.frag_home, container, false);
+        isCreate = true;
         return binding.getRoot();
     }
 
     @Override
     protected void initViews(Bundle savedInstanceState) {
+
         super.initViews(savedInstanceState);
         mData = new ArrayList<>();
         presenter = new HomePresenterImpl(this,mActivity);
@@ -114,6 +120,9 @@ public class HomeFragment extends BaseFragment implements HomeView,
         adapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
+                //调用房屋点击量
+                presenter.addPv(mData.get(position).getHouseId() + "");
+
 //                判断该进入直播还是非直播
                 if(mData.get(position).getLiveStatus() == 1){
                     //直播
@@ -135,6 +144,18 @@ public class HomeFragment extends BaseFragment implements HomeView,
                 }
             }
         });
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser && isCreate) {
+            //相当于Fragment的onResume
+            //在这里处理加载数据等操作
+            onRefresh();
+        } else {
+            //相当于Fragment的onPause
+        }
     }
 
     @Override

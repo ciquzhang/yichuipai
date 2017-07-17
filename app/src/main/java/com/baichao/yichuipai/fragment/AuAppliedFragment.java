@@ -47,11 +47,16 @@ public class AuAppliedFragment extends BaseFragment implements AuAppliedView,
     private List<AppliedListBean.DataBean.PageDataBean.HouseAndSignRecordBean> mList;
     private Handler handler = new Handler();
     private int num = 1;
+    /**
+     * 是否创建
+     */
+    protected boolean isCreate = false;
 
     @Override
     protected View loadContentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = View.inflate(mActivity,R.layout.auction_appiyed,null);
         recyclerView = (EasyRecyclerView) view.findViewById(R.id.appiyed_recycler);
+        isCreate = true;
         return view;
     }
 
@@ -84,11 +89,26 @@ public class AuAppliedFragment extends BaseFragment implements AuAppliedView,
     }
 
     @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser && isCreate) {
+            //相当于Fragment的onResume
+            //在这里处理加载数据等操作
+            onRefresh();
+        } else {
+            //相当于Fragment的onPause
+        }
+    }
+
+    @Override
     protected void initListener() {
         super.initListener();
         adapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
+
+                presenter.addPv(mList.get(position).getHouseInfo().getId() + "");
+
                 //                判断该进入直播还是非直播
                 if(mList.get(position).getAuctionInfo().getLiveStatus() == 1){
                     //直播

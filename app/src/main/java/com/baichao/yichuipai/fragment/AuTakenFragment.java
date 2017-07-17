@@ -44,11 +44,16 @@ public class AuTakenFragment extends BaseFragment implements AuTakenView,
     private List<TakenListBean.DataBean.PageDataBean> mData;
     private Handler handler = new Handler();
     private int num = 1;
+    /**
+     * 是否创建
+     */
+    protected boolean isCreate = false;
 
     @Override
     protected View loadContentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = View.inflate(mActivity,R.layout.auction_taken,null);
         recyclerView = (EasyRecyclerView) view.findViewById(R.id.taken_recycler);
+        isCreate = true;
         return view;
     }
 
@@ -80,11 +85,26 @@ public class AuTakenFragment extends BaseFragment implements AuTakenView,
     }
 
     @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser && isCreate) {
+            //相当于Fragment的onResume
+            //在这里处理加载数据等操作
+            onRefresh();
+        } else {
+            //相当于Fragment的onPause
+        }
+    }
+
+    @Override
     protected void initListener() {
         super.initListener();
         adapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
+
+                presenter.addPv(mData.get(position).getHouseInfo().getId() + "");
+
                 // 判断该进入直播还是非直播
                 if(mData.get(position).getAuctionInfo().getLiveStatus() == 1){
                     //直播

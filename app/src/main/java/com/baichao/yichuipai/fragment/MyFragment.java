@@ -35,6 +35,8 @@ public class MyFragment extends BaseFragment implements MyFragmentView {
     private FragMyBinding binding;
     private MyPresenterImpl presenter;
 
+
+
     @Override
     protected View loadContentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.frag_my, container, false);

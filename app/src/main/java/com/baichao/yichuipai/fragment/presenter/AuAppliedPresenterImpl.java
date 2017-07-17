@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.Log;
 
 import com.baichao.yichuipai.fragment.moudule.AppliedListBean;
+import com.baichao.yichuipai.fragment.moudule.HousePvBean;
 import com.baichao.yichuipai.fragment.view.AuAppliedView;
 import com.baichao.yichuipai.network.NetService;
 import com.baichao.yichuipai.utils.Constant;
@@ -59,6 +60,35 @@ public class AuAppliedPresenterImpl implements AuAppliedPresenter {
                             }
                         }else{
                             auAppliedView.showToast(appliedListBean.getMsg());
+                        }
+                    }
+                });
+    }
+
+    @Override
+    public void addPv(String houseId) {
+        NetService netService = RetrofitUtils.getRetrofit(Constant.NET_HOUSE,context).create(NetService.class);
+        netService.getHousePv(houseId)
+                .subscribeOn(Schedulers.newThread())
+                .unsubscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<HousePvBean>() {
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.e("TAG", "房屋点击量" + e.getMessage());
+                    }
+
+                    @Override
+                    public void onNext(HousePvBean housePvBean) {
+                        if(housePvBean.getCode().equals("1")){
+                            Log.e("TAG", "房屋点击量接口成功调用");
+                        }else{
+                            Log.e("TAG", "房屋点击量接口调用失败");
                         }
                     }
                 });

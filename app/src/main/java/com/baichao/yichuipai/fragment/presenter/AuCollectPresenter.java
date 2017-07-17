@@ -7,4 +7,5 @@ package com.baichao.yichuipai.fragment.presenter;
 public interface AuCollectPresenter {
     void netForList(String userId);
     void netForMoreList(String userId,int pageNum);
+    void addPv(String houseId);
 }

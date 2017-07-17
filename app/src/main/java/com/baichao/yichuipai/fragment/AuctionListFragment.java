@@ -5,7 +5,6 @@ import android.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,10 +39,15 @@ public class AuctionListFragment extends BaseFragment implements AuctionListView
     private FragAuctionListBinding binding;
     private List<String> mDataList = Arrays.asList(Constant.CHANNELS);
     private AuctionAdapter mAuctionAdapter;
+    /**
+     * 是否创建
+     */
+    protected boolean isCreate = false;
 
     @Override
     protected View loadContentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.frag_auction_list, container, false);
+        isCreate = true;
         return binding.getRoot();
     }
 
@@ -54,6 +58,19 @@ public class AuctionListFragment extends BaseFragment implements AuctionListView
          * 设置顶部样式
          */
         baseSetting();
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser && isCreate) {
+            //相当于Fragment的onResume
+            //在这里处理加载数据等操作
+            baseSetting();
+            initData();
+        } else {
+            //相当于Fragment的onPause
+        }
     }
 
     /**
@@ -103,7 +120,6 @@ public class AuctionListFragment extends BaseFragment implements AuctionListView
     @Override
     protected void initData() {
         super.initData();
-        Log.e("TAG", "--111111--");
         ArrayList<Fragment> list = new ArrayList<>();
         list.add(new AuCollectFragment());
         list.add(new AuAppliedFragment());

@@ -108,7 +108,11 @@ public class Live1Fragment extends BaseFragment implements LiveFragView{
                     bin.setTextColor(Color.parseColor("#666666"));
                     price.setTextColor(Color.parseColor("#999999"));
                 }
-                holder.setText(R.id.item_live_bin,auctionRecordsBean.getBidNo()+"");
+                if(auctionRecordsBean.getBidNo().equals(data.getAuctionSignRecord().getBidNo())){
+                    holder.setText(R.id.item_live_bin,"(我)" + auctionRecordsBean.getBidNo());
+                }else{
+                    holder.setText(R.id.item_live_bin,auctionRecordsBean.getBidNo());
+                }
                 holder.setText(R.id.item_live_price,"￥" + auctionRecordsBean.getPrice()+"");
             }
         };
@@ -131,6 +135,14 @@ public class Live1Fragment extends BaseFragment implements LiveFragView{
         binding.liveStartPrice.setText(data.getAuctionInfo().getStartPrice()+"");//起拍价
         binding.liveShopType.setText(data.getAuctionInfo().getType());//类型
         binding.liveSellPeriod.setText(data.getAuctionInfo().getSellPeriod());//变卖周期
+        /**
+         * 设置竞买记录
+         */
+        if(data.getAuctionRecords()!=null){
+            binding.liveBuyCount.setText(data.getAuctionRecords().size());
+        }else{
+            binding.liveBuyCount.setText("0");
+        }
         if(data.getAuctionMeeting().getSignEndTime() == 0){
             binding.liveSignUpEnd.setText("-");//报名截止
         }else{
@@ -151,7 +163,7 @@ public class Live1Fragment extends BaseFragment implements LiveFragView{
         binding.liveHouseAddress.setText(data.getHouseInfo().getLocation());//房产地址
         switch (live_buy) {
             case 0 :
-                Log.e("TAG", "--error_live1--");
+                Log.e("TAG", "详情页状态错误");
                 break;
             case 1:
                 //拍卖
@@ -164,7 +176,11 @@ public class Live1Fragment extends BaseFragment implements LiveFragView{
                 binding.liveBuy.setVisibility(View.GONE);
                 binding.livePrice.setTextColor(Color.parseColor("#00B589"));
                 binding.liveCurrent.setText("起拍价");
-                binding.liveCommit.setText("报名");
+                if(data.getAuctionSignRecord()!=null){
+                    binding.liveCommit.setText("已报名");
+                }else{
+                    binding.liveCommit.setText("报名");
+                }
                 btn_type = "2";
                 binding.livePrice.setText(data.getAuctionInfo().getStartPrice() +"");
                 break;
@@ -332,14 +348,18 @@ public class Live1Fragment extends BaseFragment implements LiveFragView{
         data = dataBean;
         viewSetting();
         list.clear();
-        list.addAll(data.getAuctionRecords());
-        adapter.notifyDataSetChanged();
+        if(data.getAuctionRecords()!=null){
+            list.addAll(data.getAuctionRecords());
+            adapter.notifyDataSetChanged();
+        }
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(resultCode == Constant.RESULT_LOGIN){
+//            Log.e("TAG", "houseId" + houseId);
+//            Log.e("TAG", "auctionId" + auctionId);
             presenter.netForNewData(houseId,auctionId);
         }
     }

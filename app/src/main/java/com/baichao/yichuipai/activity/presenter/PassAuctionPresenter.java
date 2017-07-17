@@ -7,4 +7,5 @@ package com.baichao.yichuipai.activity.presenter;
 public interface PassAuctionPresenter {
     void netForList();
     void netForMoreList(int pageNum);
+    void addPv(String houseId);
 }

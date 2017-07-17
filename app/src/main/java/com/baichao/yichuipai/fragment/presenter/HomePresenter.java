@@ -10,5 +10,6 @@ public interface HomePresenter {
     void netForHomeList();
     void netForHomeListMore(int num);
     void headLoading(CarouselFigureView carouselFigureView);
-    void netForItemList(String houseId,String auctionId);
+    void addPv(String houseId);
+
 }

@@ -44,12 +44,17 @@ public class AuCollectFragment extends BaseFragment implements AuCollectView,
     private List<CollectionListBean.DataBean.PageDataBean> mData;
     private Handler handler = new Handler();
     private int num = 1;
+    /**
+     * 是否创建
+     */
+    protected boolean isCreate = false;
 
 
     @Override
     protected View loadContentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = View.inflate(mActivity,R.layout.auction_collext,null);
         recyclerView = (EasyRecyclerView) view.findViewById(R.id.collect_recycler);
+        isCreate = true;
         return view;
     }
 
@@ -89,7 +94,9 @@ public class AuCollectFragment extends BaseFragment implements AuCollectView,
             @Override
             public void onItemClick(int position) {
 
-                //                判断该进入直播还是非直播
+                presenter.addPv(mData.get(position).getHouseInfo().getId() + "");
+
+                // 判断该进入直播还是非直播
                 if(mData.get(position).getAuctionInfo().getLiveStatus() == 1){
                     //直播
                     Intent intent =  new Intent(mActivity,LiveActivity.class);
@@ -109,6 +116,18 @@ public class AuCollectFragment extends BaseFragment implements AuCollectView,
                 }
             }
         });
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser && isCreate) {
+            //相当于Fragment的onResume
+            //在这里处理加载数据等操作
+            onRefresh();
+        } else {
+            //相当于Fragment的onPause
+        }
     }
 
     @Override

@@ -19,6 +19,7 @@ import com.baichao.yichuipai.fragment.moudule.AuthStatusBean;
 import com.baichao.yichuipai.fragment.moudule.CollectionBean;
 import com.baichao.yichuipai.fragment.moudule.CollectionListBean;
 import com.baichao.yichuipai.fragment.moudule.HomeBean;
+import com.baichao.yichuipai.fragment.moudule.HousePvBean;
 import com.baichao.yichuipai.fragment.moudule.RefreshTokenBean;
 import com.baichao.yichuipai.fragment.moudule.TakenListBean;
 import com.baichao.yichuipai.fragment.moudule.UserMessageBean;
@@ -364,6 +365,15 @@ public interface NetService {
      */
     @POST("getUserInfo")
     Observable<UserMessageBean> getUserMessage(@Query("userId") String userId);
+
+
+    /**
+     * 获取房屋点击量
+     * @param houseId
+     * @return
+     */
+    @POST("getUserInfo")
+    Observable<HousePvBean> getHousePv(@Query("houseId") String houseId);
 }
 
 
