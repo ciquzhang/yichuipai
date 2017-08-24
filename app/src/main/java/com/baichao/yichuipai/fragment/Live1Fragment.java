@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
@@ -59,6 +61,14 @@ public class Live1Fragment extends BaseFragment implements LiveFragView{
     private LiveFragPresenter presenter;
     private String houseId;
     private String auctionId;
+    private Handler handler = new Handler(){
+        public void handleMessage(Message msg){
+            if(msg.what == Constant.LIVE_REFRESH){
+                presenter.netForNewData(houseId,auctionId);
+                handler.sendEmptyMessageDelayed(Constant.LIVE_REFRESH,3000);
+            }
+        }
+    };
 
     @SuppressLint("ValidFragment")
     public Live1Fragment(int live_buy ,HouseInfoDetailBean.DataBean dataBean,String houseId,String auctionId) {
@@ -85,6 +95,7 @@ public class Live1Fragment extends BaseFragment implements LiveFragView{
         super.initData();
         viewSetting();
         topRecycleSetting();
+        handler.sendEmptyMessageDelayed(Constant.LIVE_REFRESH,3000);
     }
 
     private void topRecycleSetting() {
@@ -139,7 +150,7 @@ public class Live1Fragment extends BaseFragment implements LiveFragView{
          * 设置竞买记录
          */
         if(data.getAuctionRecords()!=null){
-            binding.liveBuyCount.setText(data.getAuctionRecords().size());
+            binding.liveBuyCount.setText(data.getAuctionRecords().size() + "");
         }else{
             binding.liveBuyCount.setText("0");
         }

@@ -34,17 +34,15 @@ public class Constant {
 
     public static final int REQUEST_SIGN = 12;//直播界面启动登录
 
-    public static final int RESULT_LIVE_TO_MY= 10;//直播界面启动登录
+    public static final int RESULT_LIVE_TO_MY = 10;//直播界面启动登录
 
-    public static final int REQUEST_LIVE_TO_MY= 11;//直播界面启动登录
+    public static final int REQUEST_LIVE_TO_MY = 11;//直播界面启动登录
 
-    public static final int REQUEST_SETTING= 12;//我的-->设置
+    public static final int REQUEST_SETTING = 12;//我的-->设置
 
-    public static final int RESULT_SETTING= 13;//退出登录成功
+    public static final int RESULT_SETTING = 13;//退出登录成功
 
-    public static final String ACTION_NAME= "110";//登录成功发送广播
-
-    public static final String ACTION_COLLECT= "111";//收藏成功发送的广播
+    public static final int LIVE_REFRESH = 1;//刷新界面
 
     public static final int TAKE_PICTURE_FRONT = 0;//选择拍照(正面)
     public static final int CHOOSE_PICTURE_FRONT = 1;//选择相册(正面)

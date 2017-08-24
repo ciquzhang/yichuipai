@@ -14,7 +14,9 @@ import com.baichao.yichuipai.activity.view.NoLiveView;
 import com.baichao.yichuipai.adapter.LiveAdapter;
 import com.baichao.yichuipai.core.BaseActivity;
 import com.baichao.yichuipai.databinding.ActivityNoLiveBinding;
+import com.baichao.yichuipai.fragment.ImageOrTextFragment;
 import com.baichao.yichuipai.fragment.Live1Fragment;
+import com.baichao.yichuipai.fragment.PastVideoFragment;
 import com.my.view.switchanimotion.DepthPageTransformer;
 
 import java.util.ArrayList;
@@ -43,8 +45,8 @@ public class NoLiveActivity extends BaseActivity implements NoLiveView {
         titles.add("往期视频");
         ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(new Live1Fragment(live_type,dataBean,houseId,auctionId));
-        fragments.add(new Live1Fragment(live_type,dataBean,houseId,auctionId));
-        fragments.add(new Live1Fragment(live_type,dataBean,houseId,auctionId));
+        fragments.add(new ImageOrTextFragment());
+        fragments.add(new PastVideoFragment());
         adapter = new LiveAdapter(getSupportFragmentManager(),mContext,fragments,titles);
         binding.noLiveVp.setAdapter(adapter);
         binding.noLiveVp.setOffscreenPageLimit(2);
@@ -69,8 +71,6 @@ public class NoLiveActivity extends BaseActivity implements NoLiveView {
     @Override
     protected void initData() {
         super.initData();
-//        Log.e("TAG", "--houseId--" + getIntent().getStringExtra("houseId"));
-//        Log.e("TAG", "--auctionId--" + getIntent().getStringExtra("auctionId"));
         presenter.netForItemList(getIntent().getStringExtra("houseId"),getIntent().getStringExtra("auctionId"));
     }
 

@@ -147,6 +147,15 @@ public class UserMessageBean {
             private int errorLoginCount;
             private String tranPassword;
             private int tranStatus;
+            private String userType;
+
+            public String getUserType() {
+                return userType;
+            }
+
+            public void setUserType(String userType) {
+                this.userType = userType;
+            }
 
             public int getId() {
                 return id;

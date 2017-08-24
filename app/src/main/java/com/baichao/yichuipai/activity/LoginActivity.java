@@ -94,17 +94,8 @@ public class LoginActivity extends BaseActivity implements LoginView {
     }
 
     @Override
-    public void loginSuccessful(Intent intent) {
-//        //发送广播
-//        mBroadcastReceiver = MyFragment.getMyFragmentReceiver();
-//        IntentFilter intentFilter = new IntentFilter();
-//        intentFilter.addAction(Constant.ACTION_NAME);
-//        registerReceiver(mBroadcastReceiver, intentFilter);
-//        Intent bor = new Intent();
-//        bor.putExtra("userId", ACache.get(mContext).getAsString("userId"));
-//        Log.e("TAG", "--注册广播--");
-//        sendBroadcast(bor);
-        setResult(Constant.RESULT_LOGIN,intent);
+    public void loginSuccessful() {
+        setResult(Constant.RESULT_LOGIN);
         finish();
     }
 

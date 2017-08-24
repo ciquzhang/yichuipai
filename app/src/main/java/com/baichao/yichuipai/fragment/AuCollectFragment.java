@@ -78,7 +78,6 @@ public class AuCollectFragment extends BaseFragment implements AuCollectView,
         adapter.setNoMore(R.layout.view_nomore);
         recyclerView.setRefreshListener(this);
         num = 1;
-        Log.e("TAG", "-----" + "111");
         onRefresh();
     }
 
@@ -167,12 +166,12 @@ public class AuCollectFragment extends BaseFragment implements AuCollectView,
 
     @Override
     public void refreshSuccessful(List<CollectionListBean.DataBean.PageDataBean> data) {
-        mData.clear();
-        adapter.clear();
         if(data.size() == 0){
             recyclerView.showEmpty();
             return;
         }
+        mData.clear();
+        adapter.clear();
 
         mData.addAll(data);
         adapter.addAll(data);

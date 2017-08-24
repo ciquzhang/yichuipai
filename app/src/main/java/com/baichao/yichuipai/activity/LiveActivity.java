@@ -15,7 +15,10 @@ import com.baichao.yichuipai.activity.view.NoLiveView;
 import com.baichao.yichuipai.adapter.LiveAdapter;
 import com.baichao.yichuipai.core.BaseActivity;
 import com.baichao.yichuipai.databinding.ActivityLiveBinding;
+import com.baichao.yichuipai.fragment.ChatRoomFragment;
+import com.baichao.yichuipai.fragment.ImageOrTextFragment;
 import com.baichao.yichuipai.fragment.Live1Fragment;
+import com.baichao.yichuipai.fragment.PastVideoFragment;
 
 import java.util.ArrayList;
 
@@ -55,9 +58,9 @@ public class LiveActivity extends BaseActivity implements NoLiveView {
         titles.add("聊天室");
         ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(new Live1Fragment(live_type,dataBean,houseId,auctionId));
-        fragments.add(new Live1Fragment(live_type,dataBean,houseId,auctionId));
-        fragments.add(new Live1Fragment(live_type,dataBean,houseId,auctionId));
-        fragments.add(new Live1Fragment(live_type,dataBean,houseId,auctionId));
+        fragments.add(new ImageOrTextFragment());
+        fragments.add(new PastVideoFragment());
+        fragments.add(new ChatRoomFragment());
         adapter = new LiveAdapter(getSupportFragmentManager(),mContext,fragments,titles);
         binding.liveVp.setAdapter(adapter);
         binding.liveVp.setOffscreenPageLimit(2);

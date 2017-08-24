@@ -1,39 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
     <data></data>
 
-    <com.zhy.autolayout.AutoLinearLayout
+    <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#f4f4f4">
-        <com.zhy.autolayout.AutoRelativeLayout
+        <RelativeLayout
             android:id="@+id/frag_my_login"
             android:layout_width="match_parent"
-            android:layout_height="176px"
+            android:layout_height="88dp"
             android:background="#00b589">
-            <com.baichao.yichuipai.view.RoundImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/frag_my_img"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="66px"
-                android:background="@drawable/touxiang"
-                android:src="@drawable/user_icon"/>
+                android:layout_marginLeft="30dp"
+                app:civ_border_width="2dp"
+                app:civ_border_color="#ffffff"
+                android:src="@drawable/touxiang"/>
 
-            <com.zhy.autolayout.AutoLinearLayout
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:layout_toRightOf="@+id/frag_my_img"
-                android:layout_marginLeft="50px"
+                android:layout_marginLeft="25dp"
                 android:gravity="center_vertical">
                 <TextView
                     android:id="@+id/frag_my_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="36px"
+                    android:textSize="18dp"
                     android:text="未登录"
                     android:textColor="#ffffff"/>
 
@@ -41,11 +42,11 @@
                     android:id="@+id/frag_my_msg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="28px"
-                    android:layout_marginTop="20px"
+                    android:textSize="14dp"
+                    android:layout_marginTop="10dp"
                     android:text="个人信息"
                     android:textColor="#CCF0E7"/>
-            </com.zhy.autolayout.AutoLinearLayout>
+            </LinearLayout>
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -53,31 +54,31 @@
                 android:src="@mipmap/icon_goin_w"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="20px"/>
-        </com.zhy.autolayout.AutoRelativeLayout>
+                android:layout_marginRight="10dp"/>
+        </RelativeLayout>
 
-        <com.zhy.autolayout.AutoRelativeLayout
+        <RelativeLayout
             android:id="@+id/frag_my_attention"
             android:layout_width="match_parent"
-            android:layout_height="88px"
+            android:layout_height="44dp"
             android:background="#ffffff"
-            android:layout_marginTop="20px">
+            android:layout_marginTop="10dp">
             <ImageView
                 android:id="@+id/frag_my_icon_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:src="@mipmap/icon_my_attention"
-                android:layout_marginLeft="18px"/>
+                android:layout_marginLeft="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/frag_my_icon_1"
                 android:layout_centerVertical="true"
-                android:textSize="32px"
+                android:textSize="16dp"
                 android:text="关注"
-                android:layout_marginLeft="22px"/>
+                android:layout_marginLeft="10dp"/>
 
             <ImageView
                 android:id="@+id/frag_my_img_1"
@@ -85,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="20px"
+                android:layout_marginRight="10dp"
                 android:src="@mipmap/icon_goin_g"/>
 
             <TextView
@@ -93,18 +94,19 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/frag_my_img_1"
-                android:layout_marginRight="12px"
+                android:layout_marginRight="6dp"
                 android:textColor="#999999"
-                android:textSize="28px"/>
-        </com.zhy.autolayout.AutoRelativeLayout>
+                android:textSize="14dp"/>
+        </RelativeLayout>
 
-        <com.zhy.autolayout.AutoLinearLayout
+        <LinearLayout
+            android:id="@+id/frag_my_ordinary"
             android:layout_width="match_parent"
-            android:layout_height="178px"
+            android:layout_height="89dp"
             android:background="#ffffff"
-            android:layout_marginTop="20px"
+            android:layout_marginTop="10dp"
             android:orientation="vertical">
-            <com.zhy.autolayout.AutoRelativeLayout
+            <RelativeLayout
                 android:id="@+id/frag_my_approve_person"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -115,16 +117,16 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:src="@mipmap/icon_my_personal_certificate"
-                    android:layout_marginLeft="18px"/>
+                    android:layout_marginLeft="10dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/frag_my_icon_2"
                     android:layout_centerVertical="true"
-                    android:textSize="32px"
+                    android:textSize="16dp"
                     android:text="实名认证"
-                    android:layout_marginLeft="22px"/>
+                    android:layout_marginLeft="10dp"/>
 
                 <TextView
                     android:id="@+id/frag_my_tv_approve_person"
@@ -132,10 +134,10 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_toLeftOf="@+id/frag_my_img_2"
-                    android:layout_marginRight="12px"
+                    android:layout_marginRight="6dp"
                     android:textColor="#999999"
                     android:text="未认证"
-                    android:textSize="28px"/>
+                    android:textSize="14dp"/>
 
                 <ImageView
                     android:id="@+id/frag_my_img_2"
@@ -143,17 +145,17 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="20px"
+                    android:layout_marginRight="10dp"
                     android:src="@mipmap/icon_goin_g"/>
-            </com.zhy.autolayout.AutoRelativeLayout>
+            </RelativeLayout>
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="2px"
+                android:layout_height="1dp"
                 android:background="#eeeeee"
-                android:layout_marginLeft="20px"/>
+                android:layout_marginLeft="10dp"/>
 
-            <com.zhy.autolayout.AutoRelativeLayout
+            <RelativeLayout
                 android:id="@+id/frag_my_approve_company"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -164,16 +166,16 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:src="@mipmap/icon_my_enterprise_certification"
-                    android:layout_marginLeft="18px"/>
+                    android:layout_marginLeft="10dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/frag_my_icon_3"
                     android:layout_centerVertical="true"
-                    android:textSize="32px"
+                    android:textSize="16dp"
                     android:text="企业认证"
-                    android:layout_marginLeft="22px"/>
+                    android:layout_marginLeft="10dp"/>
 
                 <TextView
                     android:id="@+id/frag_my_tv_approve_company"
@@ -181,10 +183,10 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_toLeftOf="@+id/frag_my_img_3"
-                    android:layout_marginRight="12px"
-                    android:text="未认证"
+                    android:layout_marginRight="6dp"
                     android:textColor="#999999"
-                    android:textSize="28px"/>
+                    android:text="未认证"
+                    android:textSize="14dp"/>
 
                 <ImageView
                     android:id="@+id/frag_my_img_3"
@@ -192,18 +194,151 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="20px"
+                    android:layout_marginRight="10dp"
                     android:src="@mipmap/icon_goin_g"/>
-            </com.zhy.autolayout.AutoRelativeLayout>
-        </com.zhy.autolayout.AutoLinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
 
-        <com.zhy.autolayout.AutoLinearLayout
+        <LinearLayout
+            android:id="@+id/frag_my_anchor"
             android:layout_width="match_parent"
-            android:layout_height="178px"
+            android:layout_height="134dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:background="#ffffff">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/frag_my_anchor_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/icon_my_anchor"
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textSize="16dp"
+                    android:text="主播任务"
+                    android:textColor="#7c48c3"
+                    android:layout_toRightOf="@+id/frag_my_anchor_1"
+                    android:layout_marginLeft="10dp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/icon_goin_g"/>
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee"
+                android:layout_marginLeft="10dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/frag_my_anchor_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/icon_my_fans"
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/frag_my_anchor_2"
+                    android:layout_centerVertical="true"
+                    android:textSize="16dp"
+                    android:text="粉丝"
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/frag_my_anchor_right"
+                    android:layout_marginRight="6dp"
+                    android:textColor="#999999"
+                    android:text="0"
+                    android:textSize="14dp"/>
+
+                <ImageView
+                    android:id="@+id/frag_my_anchor_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/icon_goin_g"/>
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee"
+                android:layout_marginLeft="10dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/frag_my_anchor_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/icon_my_attention"
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/frag_my_anchor_3"
+                    android:layout_centerVertical="true"
+                    android:textSize="16dp"
+                    android:text="关注"
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/frag_my_anchor_right_1"
+                    android:layout_marginRight="6dp"
+                    android:textColor="#999999"
+                    android:text="0"
+                    android:textSize="14dp"/>
+
+                <ImageView
+                    android:id="@+id/frag_my_anchor_right_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/icon_goin_g"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="89dp"
             android:background="#ffffff"
-            android:layout_marginTop="20px"
+            android:layout_marginTop="10dp"
             android:orientation="vertical">
-            <com.zhy.autolayout.AutoRelativeLayout
+            <RelativeLayout
                 android:id="@+id/frag_my_wallet"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -214,16 +349,16 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:src="@mipmap/icon_my_wallet"
-                    android:layout_marginLeft="18px"/>
+                    android:layout_marginLeft="10dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/frag_my_icon_4"
                     android:layout_centerVertical="true"
-                    android:textSize="32px"
+                    android:textSize="16dp"
                     android:text="钱包"
-                    android:layout_marginLeft="22px"/>
+                    android:layout_marginLeft="10dp"/>
 
                 <ImageView
                     android:id="@+id/frag_my_img_4"
@@ -231,17 +366,17 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="20px"
+                    android:layout_marginRight="10dp"
                     android:src="@mipmap/icon_goin_g"/>
-            </com.zhy.autolayout.AutoRelativeLayout>
+            </RelativeLayout>
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="2px"
+                android:layout_height="1dp"
                 android:background="#eeeeee"
-                android:layout_marginLeft="20px"/>
+                android:layout_marginLeft="10dp"/>
 
-            <com.zhy.autolayout.AutoRelativeLayout
+            <RelativeLayout
                 android:id="@+id/frag_my_safe"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -252,16 +387,16 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:src="@mipmap/icon_my_safety"
-                    android:layout_marginLeft="18px"/>
+                    android:layout_marginLeft="10dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/frag_my_icon_5"
                     android:layout_centerVertical="true"
-                    android:textSize="32px"
+                    android:textSize="16dp"
                     android:text="安全性"
-                    android:layout_marginLeft="22px"/>
+                    android:layout_marginLeft="10dp"/>
 
                 <ImageView
                     android:id="@+id/frag_my_img_5"
@@ -269,33 +404,33 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="20px"
+                    android:layout_marginRight="10dp"
                     android:src="@mipmap/icon_goin_g"/>
-            </com.zhy.autolayout.AutoRelativeLayout>
-        </com.zhy.autolayout.AutoLinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
 
-        <com.zhy.autolayout.AutoRelativeLayout
+        <RelativeLayout
             android:id="@+id/frag_my_setting"
             android:layout_width="match_parent"
-            android:layout_height="88px"
+            android:layout_height="44dp"
             android:background="#ffffff"
-            android:layout_marginTop="20px">
+            android:layout_marginTop="10dp">
             <ImageView
                 android:id="@+id/frag_my_icon_6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:src="@mipmap/icon_my_set"
-                android:layout_marginLeft="18px"/>
+                android:layout_marginLeft="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/frag_my_icon_6"
                 android:layout_centerVertical="true"
-                android:textSize="32px"
+                android:textSize="16dp"
                 android:text="设置"
-                android:layout_marginLeft="22px"/>
+                android:layout_marginLeft="10dp"/>
 
             <ImageView
                 android:id="@+id/frag_my_img_6"
@@ -303,9 +438,9 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="20px"
+                android:layout_marginRight="10dp"
                 android:src="@mipmap/icon_goin_g"/>
 
-        </com.zhy.autolayout.AutoRelativeLayout>
-    </com.zhy.autolayout.AutoLinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
 </layout>

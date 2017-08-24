@@ -8,7 +8,8 @@
         android:layout_height="match_parent">
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp"
+            android:layout_weight="1">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -89,7 +90,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="24dp"
-                            android:text="￥111111"
+                            android:text="￥0"
                             android:textColor="#f46a2d"
                             android:layout_marginLeft="8dp"/>
                     </LinearLayout>
@@ -106,7 +107,7 @@
                             android:textSize="12dp"
                             android:textColor="#999999"
                             android:gravity="center"
-                            android:text="1025人报名"/>
+                            android:text="0人报名"/>
 
                         <TextView
                             android:id="@+id/live_clock"
@@ -116,7 +117,7 @@
                             android:textSize="12dp"
                             android:gravity="center"
                             android:textColor="#999999"
-                            android:text="1025人设置提醒"/>
+                            android:text="0人设置提醒"/>
 
                         <TextView
                             android:id="@+id/live_look_count"
@@ -126,7 +127,7 @@
                             android:textSize="12dp"
                             android:gravity="center"
                             android:textColor="#999999"
-                            android:text="1025次围观"/>
+                            android:text="0次围观"/>
                     </LinearLayout>
 
                     <ImageView
@@ -155,7 +156,7 @@
                                 android:id="@+id/live_increasePrice"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="10000"
+                                android:text="0"
                                 android:textColor="#666666"
                                 android:textSize="14dp"/>
                         </LinearLayout>
@@ -175,7 +176,7 @@
                                 android:id="@+id/live_evalaute"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="1030020"
+                                android:text="0"
                                 android:textColor="#666666"
                                 android:textSize="14dp"/>
                         </LinearLayout>
@@ -641,29 +642,27 @@
                             android:src="@mipmap/icon_goin_g"/>
                     </RelativeLayout>
                 </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/live_btn_commit"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:orientation="vertical"
-                    android:layout_marginTop="18dp"
-                    android:background="#ffffff">
-                    <Button
-                        android:id="@+id/live_commit"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="出价"
-                        android:textColor="#00b589"
-                        android:layout_marginTop="7dp"
-                        android:layout_marginBottom="7dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/live_btn_shape_commit"
-                        android:textSize="18dp"/>
-                </LinearLayout>
-
             </LinearLayout>
         </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/live_btn_commit"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical"
+            android:background="#ffffff">
+            <Button
+                android:id="@+id/live_commit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="出价"
+                android:textColor="#00b589"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/live_btn_shape_commit"
+                android:textSize="18dp"/>
+        </LinearLayout>
     </LinearLayout>
 </layout>

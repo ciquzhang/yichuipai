@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,8 +34,6 @@ public class MyFragment extends BaseFragment implements MyFragmentView {
     private FragMyBinding binding;
     private MyPresenterImpl presenter;
 
-
-
     @Override
     protected View loadContentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.frag_my, container, false);
@@ -61,7 +58,7 @@ public class MyFragment extends BaseFragment implements MyFragmentView {
     protected void initListener() {
         super.initListener();
         /**
-         * 登录或者注册
+         * 登录或者信息界面
          */
         binding.fragMyLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +77,7 @@ public class MyFragment extends BaseFragment implements MyFragmentView {
         binding.fragMyAttention.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
             }
         });
 
@@ -195,7 +193,20 @@ public class MyFragment extends BaseFragment implements MyFragmentView {
     }
 
     @Override
-    public void setUserMessage(String personStatus, String companyStatus, String name, String headImg) {
+    public void setUserMessage(String personStatus, String companyStatus, String name, String headImg,String userType) {
+        //判断用户类型
+        if(userType.equals("0")){
+            //普通用户
+            binding.fragMyOrdinary.setVisibility(View.VISIBLE);
+            binding.fragMyAttention.setVisibility(View.VISIBLE);
+            binding.fragMyAnchor.setVisibility(View.GONE);
+        }else if(userType.equals("1")){
+            //主播用户
+            binding.fragMyOrdinary.setVisibility(View.GONE);
+            binding.fragMyAttention.setVisibility(View.GONE);
+            binding.fragMyAnchor.setVisibility(View.VISIBLE);
+        }
+
         //个人
         if(personStatus.equals("0")){
             binding.fragMyTvApprovePerson.setText("未认证");
@@ -213,8 +224,7 @@ public class MyFragment extends BaseFragment implements MyFragmentView {
             binding.fragMyTvApproveCompany.setText("审核中");
         }
         //姓名
-        Log.e("TAG", "--name--" + name);
         binding.fragMyName.setText(name);
-        Glide.with(mActivity).load(Constant.APP_IMAGE + headImg).error(R.drawable.user_icon).into(binding.fragMyImg);
+        Glide.with(mActivity).load(Constant.APP_IMAGE + headImg).error(R.drawable.touxiang).into(binding.fragMyImg);
     }
 }

@@ -116,7 +116,7 @@ public class MyPresenterImpl implements MyPresenter{
 
                     @Override
                     public void onError(Throwable e) {
-                        Log.e("TAG",e.getMessage() + "1111");
+                        Log.e("TAG","获取用户信息" + e.getMessage());
                     }
 
                     @Override
@@ -124,8 +124,9 @@ public class MyPresenterImpl implements MyPresenter{
                         if(userMessageBean.getCode().equals("1")){
                             myFragmentView.setUserMessage(userMessageBean.getData().getPersonAuth().getAuthPersonStatus(),
                                     userMessageBean.getData().getCompanyAuth().getAuthCompanyStatus(),
-                                    userMessageBean.getData().getUser().getNickname(),userMessageBean.getData().getUser().getHeadImg()
-                                    );
+                                    userMessageBean.getData().getUser().getNickname(),
+                                    userMessageBean.getData().getUser().getHeadImg(),
+                                    userMessageBean.getData().getUser().getUserType());
                         }else{
                             myFragmentView.showToast(userMessageBean.getMsg());
                         }

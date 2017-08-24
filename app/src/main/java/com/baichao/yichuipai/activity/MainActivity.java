@@ -18,6 +18,7 @@ import com.baichao.yichuipai.adapter.MainTabContainerAdapter;
 import com.baichao.yichuipai.core.BaseActivity;
 import com.baichao.yichuipai.databinding.ActivityMainBinding;
 import com.baichao.yichuipai.fragment.AuctionListFragment;
+import com.baichao.yichuipai.fragment.ExplainFragment;
 import com.baichao.yichuipai.fragment.HomeFragment;
 import com.baichao.yichuipai.fragment.MyFragment;
 import com.baichao.yichuipai.utils.Constant;
@@ -58,7 +59,7 @@ public class MainActivity extends BaseActivity implements MainView{
          * 底部选择器的设置
          */
         binding.tabContainer.setAdapter(new MainTabContainerAdapter(getSupportFragmentManager(),
-                new Fragment[] {new HomeFragment(), new HomeFragment(), new AuctionListFragment(), new MyFragment()}));
+                new Fragment[] {new HomeFragment(), new ExplainFragment(), new AuctionListFragment(), new MyFragment()}));
         binding.tabContainer.setCurrentItem(0);
 
     }

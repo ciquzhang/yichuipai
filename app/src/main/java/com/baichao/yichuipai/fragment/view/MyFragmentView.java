@@ -7,5 +7,5 @@ package com.baichao.yichuipai.fragment.view;
 public interface MyFragmentView {
     void showToast(String msg);
     void isAuth(String isAuth,int type);
-    void setUserMessage(String personStatus,String companyStatus,String name,String headImg);
+    void setUserMessage(String personStatus,String companyStatus,String name,String headImg,String userType);
 }

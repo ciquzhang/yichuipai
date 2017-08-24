@@ -1,7 +1,6 @@
 package com.baichao.yichuipai.activity.presenter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 
 import com.baichao.yichuipai.activity.module.LoginBean;
@@ -50,7 +49,7 @@ public class LoginPresenterImpl implements LoginPresenter{
 
                         @Override
                         public void onError(Throwable e) {
-                            loginView.showToast("登录失败，可能是网络原因");
+                            Log.e("TAG", "登录" + e.getMessage());
                         }
 
                         @Override
@@ -60,9 +59,8 @@ public class LoginPresenterImpl implements LoginPresenter{
                                 ACache.get(context).put("token",loginBean.getData().getUserToken().getAccess_token());
                                 ACache.get(context).put("token_past_time",loginBean.getData().getUserToken().getExpire_time());
                                 ACache.get(context).put("userId",loginBean.getData().getId()+"");
-                                Intent intent = new Intent();
-                                Log.e("TAG", "userId" + loginBean.getData().getId());
-                                loginView.loginSuccessful(intent);
+                                loginView.showToast("登录成功");
+                                loginView.loginSuccessful();
                             }else{
                                 loginView.showToast("登录失败");
                             }
