@@ -119,10 +119,12 @@ public class Live1Fragment extends BaseFragment implements LiveFragView{
                     bin.setTextColor(Color.parseColor("#666666"));
                     price.setTextColor(Color.parseColor("#999999"));
                 }
-                if(auctionRecordsBean.getBidNo().equals(data.getAuctionSignRecord().getBidNo())){
-                    holder.setText(R.id.item_live_bin,"(我)" + auctionRecordsBean.getBidNo());
-                }else{
-                    holder.setText(R.id.item_live_bin,auctionRecordsBean.getBidNo());
+                if(data.getAuctionSignRecord()!=null){
+                    if((auctionRecordsBean.getBidNo()).equals(data.getAuctionSignRecord().getBidNo())){
+                        holder.setText(R.id.item_live_bin,"(我)" + auctionRecordsBean.getBidNo());
+                    }else{
+                        holder.setText(R.id.item_live_bin,auctionRecordsBean.getBidNo());
+                    }
                 }
                 holder.setText(R.id.item_live_price,"￥" + auctionRecordsBean.getPrice()+"");
             }

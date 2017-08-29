@@ -33,15 +33,16 @@ public class DateUtil {
     }
 
     public static String getDateToShortString(long time) {
-//        String res;
-//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy.MM.dd");
-//        long lt = new Long(s);
-//        Date date = new Date(lt);
-//        res = simpleDateFormat.format(date);
-//        return res;
 
         Date d = new Date(time);
         sf = new SimpleDateFormat("yyyy-MM-dd");
+        return sf.format(d);
+    }
+
+    public static String getDateToAnchorString(long time) {
+
+        Date d = new Date(time);
+        sf = new SimpleDateFormat("MM.dd HH:mm");
         return sf.format(d);
     }
 

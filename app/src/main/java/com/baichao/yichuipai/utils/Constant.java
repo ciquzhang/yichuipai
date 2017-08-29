@@ -67,7 +67,15 @@ public class Constant {
 
     public static final String NET_COLLECTION = NET_APP_PRIVATE  + "auction/";//收藏房屋列表
 
+    public static final String NET_ANCHOR = NET_APP_PRIVATE  + "anchor/";//主播任务列表
+
+    //上传文件
     public static final String NET_APP_FILE = "http://47.93.58.118:8081/auction-console/api/img/upload";
 
+    //所有图片
     public static final String APP_IMAGE = "http://47.93.58.118:8081/auction-console/upload/admin/images";
+
+    //主播任务的H5
+    public static final String APP_ANCHORH5 = NET_APP + "anchor/html/getAnchorTaskDetail";
+
 }

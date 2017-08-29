@@ -1,5 +1,7 @@
 package com.baichao.yichuipai.network;
 
+import com.baichao.yichuipai.activity.module.AnchorPassTaskBean;
+import com.baichao.yichuipai.activity.module.AnchorTaskBean;
 import com.baichao.yichuipai.activity.module.BuyListBean;
 import com.baichao.yichuipai.activity.module.CheckIsRegister;
 import com.baichao.yichuipai.activity.module.DepositBean;
@@ -374,6 +376,30 @@ public interface NetService {
      */
     @POST("getUserInfo")
     Observable<HousePvBean> getHousePv(@Query("houseId") String houseId);
+
+    /**
+     * 获取主播任务列表
+     * @param userId
+     * @return
+     */
+    @POST("getAnchorList")
+    Observable<AnchorTaskBean> getAnchorList(@Query("userId") String userId);
+
+
+    /**
+     * 往期主播任务列表
+     * @param userId
+     * @return
+     */
+    @POST("getAnchorTaskListPage")
+    Observable<AnchorPassTaskBean> getPassAnchorList(@Query("userId") String userId);
+
+
+    @POST("getAnchorTaskListPage")
+    Observable<AnchorPassTaskBean> getPassAnchorList(@Query("userId") String userId,
+                                                     @Query("pageNum") String pageNum );
+
+
 }
 
 

@@ -75,7 +75,7 @@ public class HomeHolder extends BaseViewHolder<HomeBean.DataBean.PageDataBean>{
             price_type.setText("起拍价");
             price.setTextColor(Color.parseColor("#00B589"));
             price.setText(Utils.nullToString(data.getStartPrice()));
-        }else if(data.getSignStatus() == 0 && data.getSeeHouseStatus() == 1 ){
+        }else if(data.getAuctionStatus() == 0 && data.getSeeHouseStatus() == 1 ){
             //看房中
             type.setText("看房中");
             type.setBackgroundResource(R.drawable.home_type_shape_1);

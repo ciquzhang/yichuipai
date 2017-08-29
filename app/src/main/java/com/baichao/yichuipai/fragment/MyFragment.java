@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.baichao.yichuipai.R;
+import com.baichao.yichuipai.activity.AnchorTaskActivity;
 import com.baichao.yichuipai.activity.ApproveByPActivity;
 import com.baichao.yichuipai.activity.ApprovebyCActivity;
 import com.baichao.yichuipai.activity.AttentionActivity;
@@ -33,10 +34,12 @@ public class MyFragment extends BaseFragment implements MyFragmentView {
 
     private FragMyBinding binding;
     private MyPresenterImpl presenter;
+    protected boolean isCreate = false;
 
     @Override
     protected View loadContentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.frag_my, container, false);
+        isCreate = true;
         return binding.getRoot();
     }
 
@@ -51,6 +54,18 @@ public class MyFragment extends BaseFragment implements MyFragmentView {
         super.initData();
         if(ACache.get(mActivity).getAsString("userId")!=null && ACache.get(mActivity).getAsString("userId").equals("")!=true){
             presenter.netForMessage(ACache.get(mActivity).getAsString("userId"));
+        }
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser && isCreate) {
+            if(ACache.get(mActivity).getAsString("userId")!=null && ACache.get(mActivity).getAsString("userId").equals("")!=true){
+                presenter.netForMessage(ACache.get(mActivity).getAsString("userId"));
+            }
+        } else {
+            //相当于Fragment的onPause
         }
     }
 
@@ -144,6 +159,16 @@ public class MyFragment extends BaseFragment implements MyFragmentView {
             @Override
             public void onClick(View view) {
                 startActivityForResult(new Intent(mActivity,SettingActivity.class),Constant.REQUEST_SETTING);
+            }
+        });
+
+        /**
+         * 主播任务
+         */
+        binding.fragMyAnchorTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mActivity,AnchorTaskActivity.class));
             }
         });
     }
